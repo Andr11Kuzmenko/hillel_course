@@ -1,11 +1,13 @@
+DIVIDER = 10
+
 num = int(input())
-arr = []
 
-while num > 0:
-    arr.append(num % 10)
-    num //= 10
+d, m3 = divmod(num, DIVIDER)
+d, m2 = divmod(d, DIVIDER)
+d, m1 = divmod(d, DIVIDER)
+d, m0 = divmod(d, DIVIDER)
 
-arr.reverse()
-
-for i in arr:
-    print(i)
+print(m0)
+print(m1)
+print(m2)
+print(m3)

@@ -6,15 +6,15 @@ SPEC_SYMBOLS = [9, 32]
 input_str = input()
 
 first_symbol = input_str[0] if len(input_str) else ''
-res = keyword.iskeyword(input_str)
-res = res or input_str.count('_') == len(input_str) and len(input_str) != 1
-res = res or not input_str.islower()
-res = res or first_symbol.isdigit()
+negative_result = keyword.iskeyword(input_str)
+negative_result = negative_result or input_str.count('_') == len(input_str) and len(input_str) != 1
+negative_result = negative_result or not input_str.islower()
+negative_result = negative_result or first_symbol.isdigit()
 
 for i in string.punctuation:
-    res = res or i in input_str and i != '_'
+    negative_result = negative_result or i in input_str and i != '_'
 
 for i in SPEC_SYMBOLS:
-    res = res or chr(i) in input_str
+    negative_result = negative_result or chr(i) in input_str
 
-print(not res)
+print(not negative_result)

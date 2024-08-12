@@ -5,7 +5,7 @@ SPEC_SYMBOLS = [9, 32]
 
 input_str = input()
 
-first_symbol = input_str[0] if len(input_str) else ''
+first_symbol = input_str[0] if input_str else ''
 negative_result = keyword.iskeyword(input_str)
 negative_result = negative_result or input_str.count('_') == len(input_str) and len(input_str) != 1
 negative_result = negative_result or not input_str.islower()

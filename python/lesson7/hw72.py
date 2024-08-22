@@ -1,6 +1,5 @@
 def correct_sentence(text: str) -> str:
-    result = text[0].upper() + text[1:] + ('' if text.endswith('.') else '.')
-    return result
+    return text[0].upper() + text[1:] + ('' if text.endswith('.') else '.')
 
 
 assert correct_sentence("greetings, friends") == "Greetings, friends.", 'Test1'

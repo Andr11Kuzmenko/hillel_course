@@ -1,5 +1,5 @@
 def is_even(number: int) -> bool:
-    return not int(str(bin(number))[-1])
+    return number & 1 == 0
 
 
 assert is_even(2494563894038**2) == True, 'Test1'

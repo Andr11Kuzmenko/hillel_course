@@ -1,40 +1,40 @@
 class Item:
 
-    def __init__(self, name, price, description, dimensions):
+    def __init__(self, name: str, price: float | int, description: str, dimensions: str):
         self.price = price
         self.description = description
         self.dimensions = dimensions
         self.name = name
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name}, price: {self.price}'
 
 
 class User:
 
-    def __init__(self, name, surname, numberphone):
+    def __init__(self, name: str, surname: str, numberphone: str):
         self.name = name
         self.surname = surname
         self.numberphone = numberphone
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name} {self.surname}'
 
 
 class Purchase:
-    def __init__(self, user):
+    def __init__(self, user: User):
         self.products = {}
         self.user = user
         self.total = 0
 
-    def add_item(self, item, cnt):
+    def add_item(self, item: Item, cnt: int):
         self.products[item] = cnt
 
-    def __str__(self):
+    def __str__(self) -> str:
         items = '\n'.join(f'{product.name}: {self.products[product]} pcs.' for product in self.products)
         return f'User: {self.user}\nItems:\n{items}'
 
-    def get_total(self):
+    def get_total(self) -> float | int:
         return sum([product.price * self.products[product] for product in self.products])
 
 

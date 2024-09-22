@@ -1,6 +1,7 @@
 from typing import Callable
 import time
 
+
 def memoize(func: Callable):
     cache = {}
 

@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 
+
 events = []
 
 class Event:

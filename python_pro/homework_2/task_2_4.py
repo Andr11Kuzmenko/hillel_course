@@ -1,5 +1,6 @@
 import random
 
+
 default_time = 60
 
 def training_session(num_of_rounds: int):

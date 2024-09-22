@@ -16,7 +16,7 @@ def memoize(func: Callable):
 
     return call_func
 
-def factorial(num: int):
+def factorial(num: int) -> int:
     return 1 if num == 1 else num * factorial(num - 1)
 
 

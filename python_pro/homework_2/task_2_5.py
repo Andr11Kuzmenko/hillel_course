@@ -1,17 +1,19 @@
 from datetime import date, timedelta
 
-
 events = []
 
 
 class Event:
+
     def __init__(self, event_date: date, event_name: str):
         self.event_date = event_date
         self.event_name = event_name
 
 
 def create_calendar_processor():  # in case if any additional configs needed for the processor
+
     def get_action(action_name: str):
+
         def add_event(event: Event):
             events.append(event)
 
@@ -19,12 +21,10 @@ def create_calendar_processor():  # in case if any additional configs needed for
             events_to_remove = list(
                 filter(lambda x: x.event_name == event_name, events)
             )
-
             if event_date:
                 events_to_remove = list(
                     filter(lambda x: x.event_date == event_date, events_to_remove)
                 )
-
             for event in events_to_remove:
                 events.remove(event)
 

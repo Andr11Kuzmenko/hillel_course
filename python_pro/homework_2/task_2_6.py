@@ -1,4 +1,5 @@
 def create_calculator(operation: str):
+
     def calculate(operand1: float | int, operand2: float | int) -> float | int:
         return eval(f"{operand1}{operation}{operand2}")
 

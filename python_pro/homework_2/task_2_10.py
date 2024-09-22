@@ -1,6 +1,7 @@
 def create_product(
     product_name: str, product_price: float | int, product_quantity: int
 ):
+
     def change_product_price(product_price_to_set: float | int = None):
         nonlocal product_price
         if product_price_to_set:

@@ -2,6 +2,7 @@ subscribers = []
 
 
 def subscribe(subscriber_name: str):
+
     def confirm_subscription():
         print(f"Subscription has been confirmed for {subscriber_name}")
 

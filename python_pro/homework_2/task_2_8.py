@@ -1,4 +1,5 @@
 def create_user_settings(theme: str, language: str, notifications: bool):
+
     def action(**kwargs):
         nonlocal theme, language, notifications
 
@@ -14,7 +15,6 @@ def create_user_settings(theme: str, language: str, notifications: bool):
                 "language": language,
                 "notifications": notifications,
             }
-
         return None  # according to PEP8
 
     return action

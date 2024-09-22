@@ -5,6 +5,7 @@ additional_discount = 0.02
 def create_order(
     price: float | int, additional_discount_allowed: bool = False
 ) -> float | int:
+
     def apply_additional_discount():
         nonlocal price
         price *= 1 - additional_discount

@@ -2,7 +2,6 @@ def create_user_settings(theme: str, language: str, notifications: bool):
 
     def action(**kwargs):
         nonlocal theme, language, notifications
-
         if kwargs.get("action") == "set":
             theme, language, notifications = (
                 kwargs.get("theme", theme),

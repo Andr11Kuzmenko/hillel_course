@@ -7,10 +7,8 @@ def memoize(func: Callable):
 
     def call_func(**kwargs):
         key = kwargs.get("num")
-
         if key in cache:
             return cache[key]
-
         func_res = func(**kwargs)
         cache.update({key: func_res})
         return func_res

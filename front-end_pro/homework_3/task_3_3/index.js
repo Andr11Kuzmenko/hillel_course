@@ -1,2 +1,2 @@
-let someNum = 13456;
+const someNum = 13456;
 console.log(String(someNum).split('').join(' '));

@@ -2,7 +2,10 @@ import logging
 
 logging.basicConfig(
     level=logging.INFO,
-    handlers=[logging.FileHandler("task_4_7.log"), logging.StreamHandler()],
+    handlers=[
+        logging.FileHandler("task_4_7.log"),
+        logging.StreamHandler()
+    ],
 )
 
 

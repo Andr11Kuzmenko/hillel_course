@@ -1,6 +1,5 @@
 import importlib
-import inspect
-from inspect import getmembers, isfunction, isclass, isbuiltin
+from inspect import getmembers, isfunction, isclass, isbuiltin, signature
 
 
 def analyze_module(module_name: str) -> None:
@@ -43,7 +42,7 @@ def print_function_info(module_: object) -> None:
         for name, function in functions_:
             try:
                 print(
-                    f"{name}({', '.join(inspect.signature(function).parameters.keys())})"
+                    f"{name}({', '.join(signature(function).parameters.keys())})"
                 )
             except ValueError:
                 pass

@@ -2,13 +2,13 @@ class FunctionException(Exception):
     pass
 
 
-def call_function(obj_: object, method_name: str, *args):
+def call_function(obj_: object, method_name: str, *args) -> object:
     """
     calls a function from an object
     :param obj_:
     :param method_name: function name to call
     :param args: arguments that the function might use
-    :return:
+    :return: called function result
     """
     if not hasattr(obj_, method_name):
         raise FunctionException(f"'{method_name}' is not defined")
@@ -23,7 +23,7 @@ class Calculator:
         adds two numbers together
         :param a:
         :param b:
-        :return:
+        :return: a + b
         """
         return a + b
 
@@ -33,7 +33,7 @@ class Calculator:
         subtracts b from a
         :param a:
         :param b:
-        :return:
+        :return: a - b
         """
         return a - b
 

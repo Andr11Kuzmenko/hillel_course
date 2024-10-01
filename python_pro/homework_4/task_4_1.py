@@ -13,7 +13,7 @@ class SomeTestClass:
         self.description = description_
 
 
-def analyze_object(obj_: object):
+def analyze_object(obj_: object) -> None:
     """
     prints information about the object and its properties
     :param obj_:

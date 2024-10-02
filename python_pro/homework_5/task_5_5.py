@@ -16,14 +16,14 @@ def generate_even() -> Generator[int, None, None]:
 class LimitedNumbers:
 
     def __init__(
-        self, limit: int = 100, filename: str = "results/result_task_5_5.txt"
+        self, limit: int = 100, file_path: str = "results/result_task_5_5.txt"
     ):
         self._limit = limit
-        self._filename = filename
+        self._file_path = file_path
         self._file = None
 
     def __enter__(self):
-        self._file = open(self._filename, "w")
+        self._file = open(self._file_path, "w")
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):

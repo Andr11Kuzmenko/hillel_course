@@ -4,9 +4,9 @@ from pathlib import Path
 
 class PictureInfo:
 
-    def __init__(self, folder_name: str = "resources/pictures"):
-        self._folder_name = folder_name
-        self._images = [p for p in Path(self._folder_name).glob("*.jpg")]
+    def __init__(self, folder_path: str = "resources/pictures"):
+        self._folder_path = folder_path
+        self._images = [p for p in Path(self._folder_path).glob("*.jpg")]
         self._current = 0
         self._images_count = len(self._images)
 

@@ -6,13 +6,13 @@ from task_5_4 import write_to_file
 CODES_PATTERN = r"\b(4[0-9]{2}|5[0-9]{2})\b"
 
 
-def read_file(filename: str = "resources/task_5_7.log") -> Generator[str, None, None]:
+def read_file(file_path: str = "resources/task_5_7.log") -> Generator[str, None, None]:
     """
     function generator that finds lines with "bad" status codes (4XX, 5XX)
-    :param filename:
+    :param file_path:
     :return: Generator
     """
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         for line_ in f:
             clear_line = line_.strip()
             if re.findall(CODES_PATTERN, clear_line):

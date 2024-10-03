@@ -21,8 +21,8 @@ class JsonWorker(Strategy):
         """
         json_dict = json.load(config_file)
         current_datetime = datetime.datetime.now()
-        json_dict['lastTimeOpened'] = current_datetime.strftime('%Y-%m-%d %H:%M:%S')
-        json_dict['lastDirectory'] = str(Path().absolute())
+        json_dict["lastTimeOpened"] = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+        json_dict["lastDirectory"] = str(Path().absolute())
         config_file.seek(0)
         config_file.truncate()
         json.dump(json_dict, config_file)
@@ -37,8 +37,12 @@ class IniWorker(Strategy):
         """
         conf = ConfigParser()
         conf.read_file(config_file)
-        conf.set('settings', 'lastTimeOpened', datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-        conf.set('settings', 'lastDirectory', str(Path().absolute()))
+        conf.set(
+            "settings",
+            "lastTimeOpened",
+            datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        )
+        conf.set("settings", "lastDirectory", str(Path().absolute()))
         config_file.seek(0)
         config_file.truncate()
         conf.write(config_file)

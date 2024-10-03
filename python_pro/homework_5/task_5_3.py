@@ -1,3 +1,5 @@
+from typing import Iterator
+
 from PIL import Image
 from pathlib import Path
 
@@ -10,10 +12,10 @@ class PictureInfo:
         self._current = 0
         self._images_count = len(self._images)
 
-    def __iter__(self):
+    def __iter__(self) -> "PictureInfo":
         return self
 
-    def __next__(self):
+    def __next__(self) -> tuple[str, tuple[int, int]]:
         if self._current < self._images_count:
             self._current += 1
 

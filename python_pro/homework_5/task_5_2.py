@@ -7,7 +7,7 @@ class UniqueIdCreator:
         self._num_of_id = num_of_id
         self._current = 0
 
-    def __iter__(self):
+    def __iter__(self) -> "UniqueIdCreator":
         return self
 
     def __next__(self) -> UUID:

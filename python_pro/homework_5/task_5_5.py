@@ -22,7 +22,7 @@ class LimitedNumbers:
         self._file_path = file_path
         self._file = None
 
-    def __enter__(self):
+    def __enter__(self) -> "LimitedNumbers":
         self._file = open(self._file_path, "w")
         return self
 

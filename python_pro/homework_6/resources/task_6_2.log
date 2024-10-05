@@ -1,0 +1,8 @@
+2024-10-05 20:46:00 - Starting new HTTPS connection (1): www.go:443
+2024-10-05 20:46:00 - HTTPSConnectionPool(host='www.go', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x101347e00>: Failed to resolve 'www.go' ([Errno 8] nodename nor servname provided, or not known)"))
+2024-10-05 20:46:34 - Starting new HTTPS connection (1): www.google.com:443
+2024-10-05 20:46:35 - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-10-05 20:57:29 - Starting new HTTPS connection (1): www.google.com:443
+2024-10-05 20:57:30 - https://www.google.com:443 "GET / HTTP/11" 200 None
+2024-10-05 21:02:12 - Starting new HTTPS connection (1): www.google.com:443
+2024-10-05 21:02:12 - https://www.google.com:443 "GET / HTTP/11" 200 None

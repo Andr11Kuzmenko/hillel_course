@@ -1,4 +1,3 @@
-import json
 import xml.etree.ElementTree as ET
 
 from json_csv import JsonWriter, get_data_from_json

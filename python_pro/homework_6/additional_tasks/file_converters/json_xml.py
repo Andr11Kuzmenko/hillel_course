@@ -12,13 +12,15 @@ class XmlWriter:
                     XML to ensure valid output.
         :param file_path: The file path where the XML data should be written.
         """
-        with open(file_path, 'w') as file:
+        with open(file_path, "w") as file:
             file.write(data)
 
 
 class XmlAdapter(JsonWriter, XmlWriter):
 
-    def write_to_json_file(self, data: list[dict], file_path: str = 'files/json_xml_result.xml') -> None:
+    def write_to_json_file(
+        self, data: list[dict], file_path: str = "files/json_xml_result.xml"
+    ) -> None:
         """
         Converts a list of dictionaries to XML format and calls a method to write it to a file.
         :param data: A list of dictionaries where each dictionary represents a data record. The keys of the
@@ -26,9 +28,9 @@ class XmlAdapter(JsonWriter, XmlWriter):
                     text content of those elements.
         :param file_path: The file path where the XML data will be written.
         """
-        xml_data_ = ET.Element('Countries')
+        xml_data_ = ET.Element("Countries")
         for country_data in data:
-            tmp_elem = ET.SubElement(xml_data_, 'CountryDescription')
+            tmp_elem = ET.SubElement(xml_data_, "CountryDescription")
             for key, value in country_data.items():
                 tmp_inner_elem = ET.SubElement(tmp_elem, key)
                 tmp_inner_elem.text = str(value)
@@ -37,7 +39,9 @@ class XmlAdapter(JsonWriter, XmlWriter):
 
 class JsonAdapter(XmlWriter, JsonWriter):
 
-    def write_to_xml_file(self, data: str, file_path: str = 'files/json_xml_result.json') -> None:
+    def write_to_xml_file(
+        self, data: str, file_path: str = "files/json_xml_result.json"
+    ) -> None:
         """
         Converts XML data (in string format) to JSON format and writes it to a file.
         :param data: A string containing well-formed XML data.
@@ -69,7 +73,7 @@ def convert_xml_to_dict(element: ET.Element) -> list[dict] | str | None:
     return [result]
 
 
-def get_data_from_xml(file_path: str = 'files/xml_resource.xml') -> str:
+def get_data_from_xml(file_path: str = "files/xml_resource.xml") -> str:
     """
     Parses an XML file and returns its content as a string.
     :param file_path: The file path of the XML file to be read.
@@ -81,7 +85,7 @@ def get_data_from_xml(file_path: str = 'files/xml_resource.xml') -> str:
     return ET.tostring(root).decode()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     json_data = get_data_from_json()
     xml_adapter = XmlAdapter()
     xml_adapter.write_to_json_file(json_data)

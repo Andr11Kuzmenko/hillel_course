@@ -1,7 +1,7 @@
 import csv
 
 
-def get_avg_students_mark(file_path: str = "resources/task_6_3.csv") -> float:
+def get_avg_students_mark(file_path: str = "files/task_6_3.csv") -> float:
     """
     Reads a CSV file containing student marks and calculates the average mark.
     :param file_path: The path to the CSV file containing student marks.
@@ -15,9 +15,7 @@ def get_avg_students_mark(file_path: str = "resources/task_6_3.csv") -> float:
         return round(avg_mark / reader.line_num, 2)
 
 
-def add_new_student(
-    student_data_: dict, file_path: str = "resources/task_6_3.csv"
-) -> None:
+def add_new_student(student_data_: dict, file_path: str = "files/task_6_3.csv") -> None:
     """
     Writes a new student's data to a CSV file.
     :param student_data_: A dictionary containing student data where keys

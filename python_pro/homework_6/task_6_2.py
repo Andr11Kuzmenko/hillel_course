@@ -8,7 +8,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    handlers=[logging.FileHandler("resources/task_6_2.log"), logging.StreamHandler()],
+    handlers=[logging.FileHandler("files/task_6_2.log"), logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
 
@@ -33,7 +33,7 @@ def get_page_content(url: str) -> str | None:
     return None
 
 
-def save_data_to_xml_file(data: str, file_path: str = "results/task_6_3.xml") -> None:
+def save_data_to_xml_file(data: str, file_path: str = "files/task_6_2.xml") -> None:
     """
     Saves the given data to an XML file at the specified file path.
     :param data: The data to be saved.

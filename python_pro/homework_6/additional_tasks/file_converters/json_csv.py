@@ -8,10 +8,11 @@ class CsvWriter:
         """
         Writes a 2D list of strings to a CSV file.
         :param data: A 2D list where each inner list represents a row of data in the CSV file.
-                    Each element of the inner list is a string representing the value for a cell in that row.
+                    Each element of the inner list is a string representing the value
+                    for a cell in that row.
         :param file_path: The file path where the CSV data should be written.
         """
-        with open(file_path, "w", newline="\n") as csv_file:
+        with open(file_path, "w", newline="\n", encoding='utf-8') as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerows(data)
 
@@ -21,11 +22,11 @@ class JsonWriter:
     def write_to_json_file(self, data: list[dict], file_path: str) -> None:
         """
         Writes a list of dictionaries to a JSON file.
-        :param data:  A list of dictionaries where each dictionary represents a data record that will be saved
-                        in the JSON file.
+        :param data:  A list of dictionaries where each dictionary represents a data record
+                        that will be saved in the JSON file.
         :param file_path: The file path where the JSON data will be written.
         """
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding='utf-8') as file:
             json.dump(data, file)
 
 
@@ -42,7 +43,7 @@ class JsonAdapter(CsvWriter, JsonWriter):
                         with values corresponding to each header.
         :param file_path: The file path where the JSON data should be written.
         """
-        json_data_ = [{key: val for key, val in zip(data[0], d)} for d in data[1:]]
+        json_data_ = [dict(zip(data[0], d)) for d in data[1:]]
         self.write_to_json_file(json_data_, file_path)
 
 
@@ -53,9 +54,9 @@ class CsvAdapter(JsonWriter, CsvWriter):
     ) -> None:
         """
         Converts a list of dictionaries to a CSV format and writes it to a file.
-        :param data: A list of dictionaries where each dictionary represents a data record. The keys of the
-                    dictionaries will be used as the headers in the CSV file, and the values will be written
-                    as rows.
+        :param data: A list of dictionaries where each dictionary represents a data record.
+                    The keys of the dictionaries will be used as the headers in the CSV file,
+                    and the values will be written as rows.
         :param file_path: The file path where the CSV data will be written.
         """
         headers_ = [list(data[0].keys())]
@@ -71,7 +72,7 @@ def get_data_from_csv(file_path: str = "files/csv_resource.csv") -> list[list[st
             - Each inner list represents a row from the CSV file.
             - Each element in the inner list is a string representing a cell value.
     """
-    with open(file_path) as file:
+    with open(file_path, encoding='utf-8') as file:
         reader = csv.reader(file)
         return list(reader)
 
@@ -80,7 +81,8 @@ def get_data_from_json(file_path: str = "files/json_resource.json") -> list[dict
     """
     Reads data from a JSON file and returns it as a list of dictionaries.
     :param file_path: The file path of the JSON file to be read.
-    :return: A list of dictionaries, where each dictionary represents a data record parsed from the JSON file.
+    :return: A list of dictionaries, where each dictionary represents a data record parsed
+            from the JSON file.
     """
     with open(file_path) as file:
         return json.load(file)

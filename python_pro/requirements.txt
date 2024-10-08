@@ -1,3 +1,5 @@
 pillow==10.4.0
 requests==2.32.3
 lxml==5.3.0
+mypy==1.11.2
+pylint==3.3.1

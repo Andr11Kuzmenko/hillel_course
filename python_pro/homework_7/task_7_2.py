@@ -18,7 +18,7 @@ class WebService:
         :param url: The URL from which to fetch the JSON data.
         :return: The JSON response converted to a dictionary.
         """
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=5)
         return response
 
 
@@ -39,7 +39,7 @@ class TestWebService(unittest.TestCase):
         mock_response.json.return_value = {"status": "ok"}
         mock_get.return_value = mock_response
 
-        response = WebService.get_data("http://localhost:5000/data")
+        response = WebService.get_data("https://www.google.com")
         self.assertEqual(response.json(), {"status": "ok"})
         self.assertEqual(response.status_code, 200)
 
@@ -54,7 +54,7 @@ class TestWebService(unittest.TestCase):
         mock_response.status_code = 404
         mock_get.return_value = mock_response
 
-        response = WebService.get_data("http://localhost:5000/data")
+        response = WebService.get_data("https://www.google.com")
         self.assertEqual(response.status_code, 404)
 
 

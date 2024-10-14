@@ -187,3 +187,15 @@ class UserInterface:
         print("Existing actors:")
         for idx, actor in enumerate(actors):
             print(f"{idx + 1} - {actor[0]}, {actor[1]}")
+
+    @staticmethod
+    def show_movies_with_age(movies: list[tuple[str, int]]) -> None:
+        """
+        Display a list of movies along with their respective ages.
+        :param movies: A list of tuples where each tuple contains
+                        the movie title and the age.
+        """
+        print("Movies with their age:")
+        for idx, (movie_name, age) in enumerate(movies):
+            print(f'{idx + 1}. Movie: "{movie_name}" - {age} years')
+        print()

@@ -14,7 +14,8 @@ USER_MENU = [
     "Search for a movie by name",
     "Show all movies and all actors",
     "Show movies (one-by-one)",
-    "Show actors average age per genre"
+    "Show actors average age per genre",
+    "Show movies age"
 ]
 ACTION_MAPPING = {
     "1": "add_movie",
@@ -25,5 +26,6 @@ ACTION_MAPPING = {
     "6": "show_movies_by_name",
     "7": "show_all_movies_and_all_actors",
     "8": "show_all_movies_1b1",
-    "9": "show_actors_avg_age_per_genre"
+    "9": "show_actors_avg_age_per_genre",
+    "10": "show_movies_age"
 }

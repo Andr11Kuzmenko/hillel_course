@@ -5,6 +5,7 @@ path to the SQLite database file ('settings.DATABASE_NAME').
 """
 
 import sqlite3
+from datetime import datetime
 
 import settings  # type: ignore
 
@@ -237,3 +238,30 @@ def get_all_actors() -> list[tuple[int, str, int]]:
             ORDER BY name
         """
     )
+
+
+def __get_age(year: int) -> int:
+    """
+    Calculate the age of a movie based on its release year.
+    :param year: The release year of the movie.
+    :return: The age of the movie in years.
+    """
+    return datetime.now().year - year
+
+
+def get_movies_with_age() -> list[tuple[str, int]]:
+    """
+    Retrieve a list of movies along with their respective ages.
+    :return: A list of tuples where each tuple contains
+            the movie title and the age.
+    """
+    with sqlite3.connect(settings.DATABASE_NAME) as conn:
+        conn.create_function("GET_AGE", 1, __get_age)
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+                SELECT title, GET_AGE(release_year)
+                FROM movies
+            """
+        )
+        return cursor.fetchall()

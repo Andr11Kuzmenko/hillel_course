@@ -211,6 +211,14 @@ def show_actors_avg_age_per_genre() -> None:
     ui.show_avg_age_per_genre(selected_genre, avg_age)
 
 
+def show_movies_age() -> None:
+    """
+    Fetch and display a list of movies along with their respective ages.
+    """
+    movies = dao.get_movies_with_age()
+    ui.show_movies_with_age(movies)
+
+
 def execute(func: Callable) -> None:
     """
     Execute a given function and handle potential errors.

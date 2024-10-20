@@ -1,3 +1,7 @@
+"""
+Module for downloading files from specified URLs.
+"""
+
 FILES_PATH = [
     'https://www.uaf.edu/museum/virtualmuseum/museum-minute/pdfs/Build-Your-Own-Spacecraft.pdf',
     'https://makercamp.com/wp-content/uploads/2015/07/W5D1.pdf',

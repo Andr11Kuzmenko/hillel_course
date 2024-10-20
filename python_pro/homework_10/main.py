@@ -108,6 +108,6 @@ def summarize_array() -> int:
 
 
 if __name__ == "__main__":
-    # download_files()
+    download_files()
     adjust_images()
-    # print(summarize_array())
+    print(summarize_array())

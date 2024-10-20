@@ -137,12 +137,12 @@ if __name__ == "__main__":
         products_collection = shop_db["products"]
         orders_collection = shop_db["orders"]
         create_data(orders_collection, products_collection)
-        for i in get_orders(orders_collection):
-            print(i)
+        for orders in get_orders(orders_collection):
+            print(orders)
         update_product(products_collection)
         delete_products(products_collection)
         create_index(products_collection)
-        for i in calculate_sold_products(orders_collection):
-            print(i)
-        for i in get_sum_per_client(orders_collection):
-            print(i)
+        for sold_product in calculate_sold_products(orders_collection):
+            print(sold_product)
+        for sum_of_products in get_sum_per_client(orders_collection):
+            print(sum_of_products)

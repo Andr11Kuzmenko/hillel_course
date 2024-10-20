@@ -25,10 +25,10 @@ def create_data(
     :param products_collection_: A MongoDB collection where the generated product data
                                 will be inserted.
     """
-    products = sample_data.generate_product_data()
-    orders = sample_data.generate_client_order_data(products)
-    products_collection_.insert_many(products)
-    orders_collection_.insert_many(orders)
+    products_ = sample_data.generate_product_data()
+    orders_ = sample_data.generate_client_order_data(products_)
+    products_collection_.insert_many(products_)
+    orders_collection_.insert_many(orders_)
 
 
 def get_orders(orders_collection_: Collection) -> Cursor:

@@ -1,0 +1,32 @@
+.modal {
+    border-radius: 0.75rem;
+    background: #EEEEEE;
+    max-width: 10vw;
+}
+.modal h2 {
+    background: linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(181,18,83,1) 52%, rgba(184,11,71,1) 96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.modal h5 {
+    color: #929292;
+}
+.screen-elem {
+    min-width: 10vw;
+    max-width: 10vw;
+    max-height: 7vh;
+    margin-bottom: 0.25rem;
+}
+.btn {
+    color: #FFFFFF;
+    background: #3399FF;
+    height: 4vh;
+    width: 100%;
+}
+.btn:hover {
+    background: #3388FF;
+}
+.rounded-border {
+    border-radius: 0.25rem;
+    border-color: transparent;
+}

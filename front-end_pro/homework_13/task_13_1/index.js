@@ -3,6 +3,20 @@ function setValidity(elem, msg = '') {
     elem.reportValidity();
 }
 
+function checkWhetherAnyEmptyElement() {
+    const elems = document.getElementsByClassName('form-control');
+    const elemsArray = Array.from(elems);
+    let allValid = true;
+    elemsArray.forEach(item => {
+        if (!item.value) {
+            allValid = false;
+            setValidity(item, 'Can not be empty!');
+        }
+    });
+
+    return !allValid;
+}
+
 const form = document.querySelector('form');
 form.addEventListener('input', evt => {
     if (!['input', 'textarea'].includes(evt.target.tagName.toLowerCase())) {
@@ -36,6 +50,10 @@ form.addEventListener('input', evt => {
 
 form.addEventListener('submit', event => {
     event.preventDefault();
+
+   if (checkWhetherAnyEmptyElement()) {
+       return;
+   }
 
     const formData = new FormData(event.target);
     const formObj = {};

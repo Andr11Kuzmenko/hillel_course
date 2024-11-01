@@ -51,9 +51,9 @@ form.addEventListener('input', evt => {
 form.addEventListener('submit', event => {
     event.preventDefault();
 
-   if (checkWhetherAnyEmptyElement()) {
+    if (checkWhetherAnyEmptyElement()) {
        return;
-   }
+    }
 
     const formData = new FormData(event.target);
     const formObj = {};

@@ -12,3 +12,4 @@ redis==4.3.4
 cql==1.4.0
 cassandra-driver==3.29.2
 aiohttp==3.10.10
+aiofiles==24.1.0

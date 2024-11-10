@@ -1,62 +1,70 @@
-.main {
-    border: 1px solid #d8dde6;
-    border-radius: 0.25rem;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 3rem;
-    padding: 1rem;
-    display: flex;
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
     overflow: hidden;
-    flex-wrap: nowrap;
-    gap: 1rem;
+    border: 2px solid #ddd;
 }
 
-.btn-active {
-
+.slides {
+    display: flex;
+    width: 100%;
 }
 
-.col {
-    flex: 1 1 auto;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.size_1-of-8 {
-    flex: 0 0 12.5%;
-}
-
-.size_6-of-8 {
-    flex: 0 0 75%;
-}
-
-.hidden-element {
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
     display: none;
 }
 
-.btn-prev {
-
+.active-slide {
+    display: block;
 }
 
-.btn-next {
-
+.prev, .next {
+    position: absolute;
+    top: 48%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #30cffa;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
 }
 
+.prev:hover, .next:hover {
+    background-color: #00addc;
+}
 
- .slds-icon-container {
-            width: 36px;
-            height: 36px;
-            background-color: #f3f2f2; /* Light grey background */
-            border-radius: 50%; /* Circular shape */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Light shadow */
-            cursor: pointer; /* Makes it clickable */
-        }
+.inactive-btn {
+    display: none;
+}
 
-        /* SVG styles */
-        .slds-icon {
-            width: 16px;
-            height: 16px;
-            fill: #0070d2; /* SLDS blue color */
-        }
+.prev { left: 10px; }
+
+.next { right: 10px; }
+
+.dots {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active-dot {
+    background-color: #30cffa;
+}

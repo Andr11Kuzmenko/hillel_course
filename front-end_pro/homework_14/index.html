@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main grid">
-        <div class="col size_1-of-8">
-            <button id="prev" class="slds-icon-container">
-                <svg class="slds-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 4l-8 8 8 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-            </button>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active-slide"><img src="static/1.jpg" style="width:100%"></div>
+            <div class="slide"><img src="static/2.jpg" style="width:100%"></div>
+            <div class="slide"><img src="static/3.jpg" style="width:100%"></div>
         </div>
-        <div class="col size_6-of-8">
 
-        </div>
-        <div class="col size_1-of-8">
-            <button id="next" class="btn-next">Next</button>
-        </div>
+        <button class="prev inactive-btn">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <div class="dots">
+        <span class="dot active-dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
     <script src="scripts.js"></script>
 </body>

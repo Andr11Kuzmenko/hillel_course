@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}View Profile{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                {% if user_profile.avatar %}
+                    <img src="{{ user_profile.avatar.url }}" alt="User Avatar" class="rounded-circle img-fluid mb-3" style="width: 150px; height: 150px;">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <h2>{{ user_profile.user.username }}</h2>
+                <p class="text-muted">{{ user_profile.user.email }}</p>
+                <hr>
+                <div>
+                    <h4>Bio</h4>
+                    <p>{{ user_profile.bio|default:"No bio available." }}</p>
+                </div>
+                <div>
+                    <h4>Birth Date</h4>
+                    <p>{{ user_profile.birth_date|date:"F j, Y"|default:"Not provided." }}</p>
+                </div>
+                <div>
+                    <h4>Location</h4>
+                    <p>{{ user_profile.location|default:"Location not specified." }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

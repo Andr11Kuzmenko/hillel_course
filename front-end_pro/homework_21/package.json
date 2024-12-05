@@ -1,0 +1,17 @@
+{
+  "name": "homework_21",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0"
+  }
+}

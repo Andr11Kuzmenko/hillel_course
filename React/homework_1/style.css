@@ -1,0 +1,19 @@
+.row__brand {
+    background-color: blue;
+    padding: 0.5rem;
+}
+
+.cell__model {
+    background-color: deeppink;
+    padding: 0 0.25rem;
+}
+
+.cell__model, .row__brand {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+}

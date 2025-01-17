@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro</title>
+    <script
+        src="https://unpkg.com/react@18/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const domContainer = document.querySelector("#root");
+        const root = ReactDOM.createRoot(domContainer);
+
+        const CARS = [
+            {
+                id: 1,
+                brand: "Audi",
+                models: [
+                    {
+                        id: 1,
+                        name: "A1",
+                        collection: [
+                            {
+                                id: 1,
+                                version: "Sportback",
+                                year: 2019,
+                                horsepower: 95,
+                                engine: 999
+                            },
+                            {
+                                id: 2,
+                                version: "Citycarver",
+                                year: 2019,
+                                horsepower: 95,
+                                engine: 999
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: "Q5",
+                        collection: [
+                            {
+                                id: 1,
+                                version: "FY 2021",
+                                year: 2021,
+                                horsepower: 299,
+                                engine: 1984
+                            },
+                            {
+                                id: 2,
+                                version: "Sportback",
+                                year: 2021,
+                                horsepower: 299,
+                                engine: 1984
+                            }
+                        ]
+                    },
+                    {
+                        id: 3,
+                        name: "TT",
+                        collection: [
+                            {
+                                id: 1,
+                                version: "Coupe",
+                                year: 2021,
+                                horsepower: 197,
+                                engine: 1984
+                            },
+                            {
+                                id: 2,
+                                version: "Roadster",
+                                year: 2021,
+                                horsepower: 197,
+                                engine: 1984
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                brand: "BMW",
+                models: [
+                    {
+                        id: 1,
+                        name: "8 series",
+                        collection: [
+                            {
+                                id: 1,
+                                version: "G1X LCI",
+                                year: 2022,
+                                horsepower: 333,
+                                engine: 2998
+                            },
+                            {
+                                id: 2,
+                                version: "G1X",
+                                year: 2019,
+                                horsepower: 340,
+                                engine: 2998
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: "X6",
+                        collection: [
+                            {
+                                id: 1,
+                                version: "G06 LCI",
+                                year: 2023,
+                                horsepower: 530,
+                                engine: 4395
+                            },
+                            {
+                                id: 2,
+                                version: "G06",
+                                year: 2020,
+                                horsepower: 286,
+                                engine: 2993
+                            }
+                        ]
+                    }
+                ]
+            },
+        ];
+
+
+        root.render(
+            <table>
+                <tbody>
+                    {
+                        CARS.map((item) => {
+                            return <React.Fragment key={item.id}>
+                                <tr>
+                                    <td colSpan="2" className="row__brand">{item.brand}</td>
+                                </tr>
+                                {
+                                    item.models.map((model) => {
+                                        return model.collection.map((car, carIndex, carCollection) => {
+                                            Object.defineProperty(car, 'id', {enumerable: false});
+
+                                            return <React.Fragment key={car.id}>
+                                                <tr>
+                                                    {!carIndex ? <td rowSpan={carCollection.length} className="cell__model">{model.name}</td> : ''}
+                                                    <td>
+                                                        <ul>
+                                                            {
+                                                                Object.keys(car).map((carItem, carItemIdx) => {
+                                                                    return <li key={carItemIdx}>{carItem}: {car[carItem]}</li>;
+                                                                })
+                                                            }
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </React.Fragment>;
+                                        });
+                                    })
+                                }
+                            </React.Fragment>;
+                        })
+                    }
+                </tbody>
+            </table>
+        );
+    </script>
+</body>
+</html>

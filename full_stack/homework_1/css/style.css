@@ -1,0 +1,5 @@
+.content-block {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10vw;
+}

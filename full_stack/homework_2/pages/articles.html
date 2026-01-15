@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework2</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/articles.css">
+</head>
+
+<body>
+    <nav class="top-nav">
+        <a href="../index.html">Home</a>
+        <a href="#" class="active">Articles</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./about.html">About</a>
+        <a href="./contacts.html">Contact Us</a>
+    </nav>
+    <main>
+        <nav class="article-menu">
+            <h2>Articles</h2>
+            <ul>
+                <li><a href="#article1">Introduction to HTML</a></li>
+                <li><a href="#article2">CSS Basics</a></li>
+                <li><a href="#article3">JavaScript Fundamentals</a></li>
+                <li><a href="#article4">Responsive Design</a></li>
+            </ul>
+        </nav>
+
+        <div class="articles-content">
+            <article id="article1">
+                <h2>Introduction to HTML</h2>
+                <p>HTML (HyperText Markup Language) is the backbone of every web page. It provides the structure and
+                    content that browsers display to users. Without HTML, web pages would have no headings,
+                    paragraphs,
+                    or images.</p>
+                <p>HTML uses tags, such as <code>&lt;h1&gt;</code> for headings, <code>&lt;p&gt;</code> for
+                    paragraphs,
+                    <code>&lt;a&gt;</code> for links, and <code>&lt;img&gt;</code> for images. Tags usually come in
+                    pairs with opening and closing tags, though some tags are self-closing.
+                </p>
+                <p>For example, a simple HTML structure looks like this:</p>
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is my first webpage.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+                <p>HTML also supports semantic elements like <code>&lt;header&gt;</code>,
+                    <code>&lt;footer&gt;</code>,
+                    <code>&lt;main&gt;</code>, and <code>&lt;section&gt;</code> to improve accessibility and SEO.
+                    Learning HTML is the first step to becoming a web developer.
+                </p>
+            </article>
+
+            <article id="article2">
+                <h2>CSS Basics</h2>
+                <p>CSS (Cascading Style Sheets) is used to style HTML elements. While HTML provides structure, CSS
+                    controls appearance, layout, and visual design. With CSS, you can change colors, fonts, spacing,
+                    and
+                    create animations.</p>
+                <p>CSS works with selectors to target HTML elements. For example:</p>
+                <pre>
+p {
+  color: blue;
+  font-size: 16px;
+}
+                </pre>
+                <p>This will make all paragraph texts blue and 16px in size. CSS can be written inline, internally
+                    in
+                    the <code>&lt;style&gt;</code> tag, or externally in a separate stylesheet.</p>
+                <p>CSS also allows flexible layouts using properties like <code>flexbox</code> and
+                    <code>grid</code>,
+                    which are essential for modern web design. Media queries help make your designs responsive so
+                    they
+                    adapt to different screen sizes.
+                </p>
+                <p>Some common CSS properties include:</p>
+                <ul>
+                    <li>Background colors and gradients</li>
+                    <li>Margins, padding, and borders</li>
+                    <li>Font families, sizes, and weights</li>
+                    <li>Animations and transitions</li>
+                </ul>
+            </article>
+
+            <article id="article3">
+                <h2>JavaScript Fundamentals</h2>
+                <p>JavaScript is the programming language that adds interactivity to web pages. With JavaScript, you
+                    can
+                    respond to user actions, manipulate page content, and build dynamic interfaces.</p>
+                <p>For example, you can use JavaScript to show an alert when a user clicks a button:</p>
+                <pre>
+&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;
+                </pre>
+                <p>JavaScript uses variables, functions, loops, and conditionals to control behavior. You can
+                    manipulate
+                    the DOM (Document Object Model) to change elements, text, or styles dynamically.</p>
+                <p>Popular uses of JavaScript include:</p>
+                <ul>
+                    <li>Form validation</li>
+                    <li>Interactive galleries and sliders</li>
+                    <li>Fetching data from servers (AJAX / Fetch API)</li>
+                    <li>Single Page Applications (SPAs)</li>
+                </ul>
+                <p>Learning JavaScript is essential for front-end development and allows you to create interactive
+                    websites and web applications.</p>
+            </article>
+
+            <article id="article4">
+                <h2>Responsive Design</h2>
+                <p>Responsive design ensures that websites look and function well on all devices, from large desktop
+                    monitors to small mobile screens. Without responsive design, a website may appear broken or
+                    unreadable on phones.</p>
+                <p>Techniques for responsive design include:</p>
+                <ul>
+                    <li>Flexible layouts with percentages instead of fixed pixels</li>
+                    <li>Media queries to apply different styles at different screen widths</li>
+                    <li>Flexible images and videos that scale automatically</li>
+                    <li>Using CSS frameworks like Bootstrap or Tailwind for responsive grids</li>
+                </ul>
+                <p>Example of a media query:</p>
+                <pre>
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+                </pre>
+                <p>By using responsive design, you ensure a positive user experience on all devices, which is crucial in
+                    today’s mobile-first world.</p>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>

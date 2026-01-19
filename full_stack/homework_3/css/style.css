@@ -1,0 +1,234 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #fafafa;
+}
+
+main {
+    padding-top: 6vh;
+}
+
+.top-nav {
+    position: fixed;       
+    top: 0;
+    left: 0;
+    width: 100%;          
+    background: #2f2f2f;  
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+    z-index: 1000;        
+}
+
+.top-nav-item {
+    padding: 10px 22px;
+    text-decoration: none;
+    color: #eee;
+    border-radius: 6px;
+    background: linear-gradient(145deg, #3a3a3a, #262626);
+    transition: all 0.3s ease;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.top-nav-item:hover {
+    background: linear-gradient(145deg, #5f5f5f, #3a3a3a);
+    color: #fff;
+}
+
+.top-nav-item .active {
+    background: linear-gradient(145deg, #8a8a8a, #5a5a5a);
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+}
+
+.main-text {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;         
+    background: #f0f0f0;   
+    font-size: 48px;
+    text-align: center;
+    color: #222;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 8px;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.gallery .gallery-item {
+    width: 100%;
+    height: 27vh;   
+    object-fit: cover; 
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery .gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.about-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 6vh 20px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.about-page h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #333;
+}
+
+.about-page p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.article-menu {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    width: 200px;
+    height: calc(100vh - 60px);
+    background: #2f2f2f;
+    color: #eee;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.article-menu h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.article-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.article-menu li {
+    margin: 10px 0;
+}
+
+.article-menu a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.article-menu a:hover {
+    color: #00bcd4;
+}
+
+.articles-content {
+    margin-left: 220px; 
+    padding: 20px;
+}
+
+.articles-content article {
+    margin-bottom: 60px;
+}
+
+.articles-content article::before {
+    content: "";
+    display: block;
+    height: 6vh;    
+    margin-top: -6vh;  
+    visibility: hidden; 
+}
+
+.articles-content h2 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 10px;
+    scroll-margin-top: 200px;
+}
+
+.articles-content p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-form {
+    max-width: 30vw;
+    margin: 40px auto;
+}
+
+.contact-form fieldset {
+    border: 2px solid #555;
+    padding: 25px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+}
+
+.contact-form legend {
+    padding: 0 12px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #4a4a4a;
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid #222; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    color: #ddd;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 95%;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #aaa;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #8a8a8a, #5a5a5a);
+    color: #000;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(145deg, #b0b0b0, #7a7a7a);
+}

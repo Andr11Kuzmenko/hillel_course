@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework4</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div>DIV (0, 0, 0, 1)</div>
+    <div id="divid">DIV with an ID (0, 1, 0, 0)</div>
+    <div class="div-color-blue">DIV with a class (0, 0, 1, 0)</div>
+    <div data-attr="some">DIV with an attr (0, 0, 1, 0)</div>
+    <div class="with-child">
+        <div>
+            <p>P inside of a DIV, which is inside of another DIV with a class (0, 0, 1, 2)</p>
+        </div>
+    </div>
+    <div>
+        <p>P inside of a DIV (0, 0, 0, 2)</p>
+        <div>First DIV next to P (0, 0, 0, 2)</div>
+        <div>Second DIV next to P (0, 0, 0, 1)</div>
+    </div>
+    <div id="divid2" class="div-with-id">ID has a priority over a class (0, 1, 0, 0)</div>
+    <div class="parent-div">
+        <div class="child-div">
+            DIV inside another DIV, parent DIV has a class (0, 0, 1, 0)
+        </div>
+    </div>
+    <div>
+        <div class="child-div">
+            DIV inside another DIV, parent DIV does not have a class (0, 0, 0, 1)
+        </div>
+    </div>
+</body>
+</html>

@@ -9,7 +9,10 @@
     flex-direction: column;
     gap: 3.75rem;
 
-    &__title { font-size: 3rem; font-weight: 500; }
+    &__title {
+      font-size: 3rem;
+      font-weight: 500;
+    }
 
     &__paragraph {
       width: 540px;
@@ -28,9 +31,16 @@
 
   @include respond(md) {
     .promo-section {
-      &__paragraph { width: 100%; text-align: center; }
-      &__title { text-align: center; }
-      &__button { align-self: center; }
+      &__paragraph {
+        width: 100%;
+        text-align: center;
+      }
+      &__title {
+        text-align: center;
+      }
+      &__button {
+        align-self: center;
+      }
     }
   }
 }

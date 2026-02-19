@@ -1,0 +1,36 @@
+@use "../abstracts/index" as *;
+
+.promo {
+  background-color: $color-surface-primary;
+
+  .promo-section {
+    padding-block: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+
+    &__title { font-size: 3rem; font-weight: 500; }
+
+    &__paragraph {
+      width: 540px;
+      color: $color-text-secondary;
+      line-height: 1.64;
+    }
+
+    &__button {
+      @include button;
+      width: 225px;
+      height: 65px;
+      background-color: $color-blue-700;
+      color: $color-text-tertiary;
+    }
+  }
+
+  @include respond(md) {
+    .promo-section {
+      &__paragraph { width: 100%; text-align: center; }
+      &__title { text-align: center; }
+      &__button { align-self: center; }
+    }
+  }
+}

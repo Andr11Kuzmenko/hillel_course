@@ -1,0 +1,25 @@
+{
+  "name": "hillel_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass full_stack/homework_11/assets/styles/scss/main.scss full_stack/homework_11/assets/styles/style.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andr11Kuzmenko/hillel_course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Andr11Kuzmenko/hillel_course/issues"
+  },
+  "homepage": "https://github.com/Andr11Kuzmenko/hillel_course#readme",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

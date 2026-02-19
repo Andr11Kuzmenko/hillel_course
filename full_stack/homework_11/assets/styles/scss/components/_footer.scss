@@ -1,0 +1,22 @@
+@use "../abstracts/index" as *;
+
+.footer {
+  background-color: $color-blue-700;
+  color: $color-text-tertiary;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 50px;
+  }
+
+  &__name {
+    font-size: 21px;
+    font-weight: 500;
+  }
+  &__copyright {
+    font-size: 13px;
+    line-height: 1.64;
+  }
+}

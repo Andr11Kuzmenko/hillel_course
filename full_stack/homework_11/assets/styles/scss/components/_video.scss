@@ -1,0 +1,51 @@
+@use "../abstracts/index" as *;
+
+.video {
+  background-color: $color-surface-primary;
+
+  &__container {
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-block: 100px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  &__paragraph {
+    font-size: 16px;
+    color: $color-text-secondary;
+  }
+
+  &__foto {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      pointer-events: none;
+    }
+  }
+}
+
+.background-img {
+  max-width: 100%;
+  display: block;
+}
+
+.top-img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}

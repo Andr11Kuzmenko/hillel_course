@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+svg {
+  background: white;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.shape {
+  stroke-width: 5px;
+}
+
+.square {
+  fill: #4caf50;
+  stroke: #1b5e20;
+}
+
+.rectangle {
+  fill: #2196f3;
+  stroke: #0d47a1;
+}
+
+.circle {
+  fill: #ff9800;
+  stroke: #e65100;
+}
+
+.ellipse {
+  fill: #9c27b0;
+  stroke: #4a148c;
+}
+
+.orbit {
+  transform-origin: 350px 200px;
+  animation: rotateOrbit linear infinite;
+}
+
+.orbit-1 {
+  animation-duration: 6s;
+}
+
+.orbit-2 {
+  animation-duration: 8s;
+}
+
+.orbit-3 {
+  animation-duration: 5s;
+}
+
+.orbit-4 {
+  animation-duration: 10s;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animated {
+  animation: colorChange 3s infinite alternate ease-in-out;
+}
+
+@keyframes colorChange {
+  0% {
+    fill: #ff9800;
+    stroke: #e65100;
+  }
+  100% {
+    fill: #ffeb3b;
+    stroke: #f57f17;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

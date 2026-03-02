@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Bootstrap Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MySite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Design</a></li>
+                            <li><a class="dropdown-item" href="#">Development</a></li>
+                            <li><a class="dropdown-item" href="#">Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Team</a></li>
+                            <li><a class="dropdown-item" href="#">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6 col-12 left-column">
+                <h4 class="mb-3">Gallery</h4>
+
+                <div id="carouselVertical" class="carousel slide vertical-carousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="static/images/pic1.jpeg" class="d-block w-100" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/images/pic2.jpg" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/images/pic3.avif" class="d-block w-100" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/images/pic4.avif" class="d-block w-100" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/images/pic5.webp" class="d-block w-100" alt="Image 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/images/pic6.avif" class="d-block w-100" alt="Image 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12 main-column">
+                <h4 class="mb-3">Information</h4>
+
+                <div class="accordion mb-4" id="infoAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#itemOne">
+                                Section One
+                            </button>
+                        </h2>
+                        <div id="itemOne" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                Content for the first section.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#itemTwo">
+                                Section Two
+                            </button>
+                        </h2>
+                        <div id="itemTwo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                Content for the second section.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mb-3">Contact Form</h4>
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <select class="form-select">
+                            <option>General Inquiry</option>
+                            <option>Support</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark me-2">Submit</button>
+                    <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-12 col-12 right-column">
+                <h4 class="mb-3">Sidebar</h4>
+                <p>Additional content.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        2026 MySite.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

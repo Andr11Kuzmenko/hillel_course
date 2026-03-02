@@ -1,0 +1,55 @@
+$background-light: #f4f6f9;
+$sidebar-bg: #e9ecef;
+$card-radius: 10px;
+
+body {
+  background: $background-light;
+}
+
+.left-column,
+.right-column {
+  background: $sidebar-bg;
+  padding: 1.5rem;
+  border-radius: $card-radius;
+}
+
+.main-column {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: $card-radius;
+}
+
+.vertical-carousel {
+  .carousel-inner {
+    height: 420px;
+  }
+
+  .carousel-item {
+    height: 420px;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .right-column {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-column,
+  .main-column,
+  .right-column {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,48 @@
+body {
+  background: #f4f6f9;
+}
+
+.left-column,
+.right-column {
+  background: #e9ecef;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.main-column {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.vertical-carousel .carousel-inner {
+  height: 420px;
+}
+.vertical-carousel .carousel-item {
+  height: 420px;
+}
+.vertical-carousel img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .right-column {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .left-column,
+  .main-column,
+  .right-column {
+    margin-bottom: 1rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

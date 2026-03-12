@@ -1,0 +1,211 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes bgDrift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0    rgba(99,102,241,.5); }
+  50%       { box-shadow: 0 0 0 14px rgba(99,102,241,0); }
+}
+
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+
+.hero-bg {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0c1a2e, #0f172a);
+  background-size: 400% 400%;
+  animation: bgDrift 10s ease infinite;
+}
+
+.orb { pointer-events: none; border-radius: 50%; filter: blur(80px); }
+.orb-1 { animation: float 7s ease-in-out infinite; }
+.orb-2 { animation: float 9s ease-in-out infinite 3s; }
+.orb-3 { animation: float 6s ease-in-out infinite 1.5s; }
+
+.au-1 { animation: fadeUp .7s ease      both; }
+.au-2 { animation: fadeUp .7s ease .15s both; }
+.au-3 { animation: fadeUp .7s ease .30s both; }
+.au-4 { animation: fadeUp .7s ease .45s both; }
+.au-5 { animation: fadeUp .7s ease .60s both; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8, #a78bfa, #f59e0b, #818cf8);
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.glass {
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.glass-dark {
+  background: rgba(15,23,42,.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.nav-link { position: relative; transition: color .35s ease; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  background: #6366f1;
+  border-radius: 1px;
+  transition: width .35s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+#nav-toggle { display: none; }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: #f8fafc;
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0;
+  width: 280px; height: 100vh;
+  z-index: 49;
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  padding: 5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 48;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+
+#nav-toggle:checked ~ .mobile-menu { transform: translateX(0); }
+#nav-toggle:checked ~ .overlay     { opacity: 1; pointer-events: all; }
+#nav-toggle:checked ~ label .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#nav-toggle:checked ~ label .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#nav-toggle:checked ~ label .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.booking-input {
+  width: 100%;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: .75rem;
+  padding: .7rem 1rem;
+  color: #f8fafc;
+  font-size: .9rem;
+  outline: none;
+  transition: all .35s ease;
+}
+.booking-input::placeholder { color: rgba(248,250,252,.35); }
+.booking-input option       { background: #0f172a; color: #f8fafc; }
+.booking-input:focus {
+  border-color: #6366f1;
+  background: rgba(99,102,241,.08);
+  box-shadow: 0 0 0 3px rgba(99,102,241,.15);
+}
+.booking-input::-webkit-calendar-picker-indicator { filter: invert(.7); cursor: pointer; }
+
+.tab-radio { display: none; }
+.tab-btn {
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: .55rem .75rem;
+  border-radius: .625rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: rgba(248,250,252,.6);
+  transition: all .25s ease;
+  user-select: none;
+}
+.tab-btn:hover { color: #f8fafc; }
+
+#tab-hotel:checked  ~ .tab-labels label[for="tab-hotel"],
+#tab-flight:checked ~ .tab-labels label[for="tab-flight"],
+#tab-car:checked    ~ .tab-labels label[for="tab-car"] {
+  background: #6366f1;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(99,102,241,.4);
+}
+
+.panel-hotel, .panel-flight, .panel-car { display: none; }
+#tab-hotel:checked  ~ .tab-panels .panel-hotel  { display: grid; }
+#tab-flight:checked ~ .tab-panels .panel-flight { display: grid; }
+#tab-car:checked    ~ .tab-panels .panel-car    { display: grid; }
+
+.feature-card {
+  transition: all .35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99,102,241,.1), transparent);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.feature-card:hover                { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.25), 0 0 0 1px rgba(99,102,241,.25); }
+.feature-card:hover::before        { opacity: 1; }
+.feature-card:hover .f-icon        { animation: glowPulse 1.5s ease infinite; }
+
+.dest-card              { position: relative; overflow: hidden; transition: all .4s ease; }
+.dest-card img          { transition: transform .6s cubic-bezier(.4,0,.2,1); display: block; }
+.dest-card:hover        { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+.dest-card:hover img    { transform: scale(1.07); }
+
+.testimonial-card       { transition: all .35s ease; }
+.testimonial-card:hover { transform: translateY(-4px); border-color: rgba(99,102,241,.35) !important; }
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fadeUp .7s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+  }
+}
+
+.btn-press:active { transform: scale(.97); }
+
+.stat-num {
+  background: linear-gradient(135deg, #6366f1, #f59e0b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

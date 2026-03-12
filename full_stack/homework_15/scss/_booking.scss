@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+.booking-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all $trans;
+
+  &::placeholder {
+    color: rgba(248, 250, 252, 0.35);
+  }
+  option {
+    background: $slate-900;
+    color: #f8fafc;
+  }
+
+  &:focus {
+    border-color: $indigo;
+    background: rgba($indigo, 0.08);
+    box-shadow: 0 0 0 3px rgba($indigo, 0.15);
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+    cursor: pointer;
+  }
+}
+
+.tab-radio {
+  display: none;
+}
+
+.tab-btn {
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.625rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.6);
+  transition: all 0.25s ease;
+  user-select: none;
+
+  &:hover {
+    color: #f8fafc;
+  }
+}
+
+#tab-hotel:checked ~ .tab-labels label[for="tab-hotel"],
+#tab-flight:checked ~ .tab-labels label[for="tab-flight"],
+#tab-car:checked ~ .tab-labels label[for="tab-car"] {
+  background: $indigo;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba($indigo, 0.4);
+}
+
+.panel-hotel,
+.panel-flight,
+.panel-car {
+  display: none;
+}
+
+#tab-hotel:checked ~ .tab-panels .panel-hotel {
+  display: grid;
+}
+#tab-flight:checked ~ .tab-panels .panel-flight {
+  display: grid;
+}
+#tab-car:checked ~ .tab-panels .panel-car {
+  display: grid;
+}

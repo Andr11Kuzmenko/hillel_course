@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayEasy — Hotel & Travel Bookings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="booking.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+          colors: {
+            indigo: { 500: "#6366f1", 600: "#4f46e5" },
+            amber:  { 400: "#fbbf24", 500: "#f59e0b" },
+            slate:  { 900: "#0f172a", 800: "#1e293b", 700: "#334155" },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans bg-slate-900 text-slate-50 overflow-x-hidden">
+
+  <input type="checkbox" id="nav-toggle" class="sr-only" />
+
+  <nav class="mobile-menu glass-dark">
+    <label for="nav-toggle" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white cursor-pointer text-xl">✕</label>
+    <a href="#destinations" class="text-slate-300 hover:text-white font-medium py-3 border-b border-white/10 transition-colors">Destinations</a>
+    <a href="#features"     class="text-slate-300 hover:text-white font-medium py-3 border-b border-white/10 transition-colors">Features</a>
+    <a href="#reviews"      class="text-slate-300 hover:text-white font-medium py-3 border-b border-white/10 transition-colors">Reviews</a>
+    <a href="#booking"      class="mt-4 text-center bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full transition-colors">Book Now</a>
+  </nav>
+  <label for="nav-toggle" class="overlay"></label>
+
+  <header class="sticky top-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-6">
+      <a href="#" class="text-xl font-black tracking-tight">
+        Stay<span class="text-indigo-500">Easy</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 list-none">
+        <li><a href="#destinations" class="nav-link text-sm font-medium text-slate-400 hover:text-white">Destinations</a></li>
+        <li><a href="#features"     class="nav-link text-sm font-medium text-slate-400 hover:text-white">Features</a></li>
+        <li><a href="#reviews"      class="nav-link text-sm font-medium text-slate-400 hover:text-white">Reviews</a></li>
+        <li><a href="#booking"      class="nav-link text-sm font-medium text-slate-400 hover:text-white">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="#booking" class="hidden sm:inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 btn-press">
+          Book Now →
+        </a>
+        <label for="nav-toggle" class="md:hidden">
+          <div class="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-5 pt-24 pb-16 overflow-hidden">
+      <div class="absolute inset-0 hero-bg"></div>
+      <div class="orb orb-1 absolute w-96 h-96 bg-indigo-500/30 -top-24 -left-24"></div>
+      <div class="orb orb-2 absolute w-80 h-80 bg-amber-500/20 -bottom-16 -right-16"></div>
+      <div class="orb orb-3 absolute w-64 h-64 bg-pink-500/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <span class="au-1 glass inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-amber-400 mb-6">
+          ✦ #1 Rated Booking Platform
+        </span>
+        <h1 class="au-2 text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.08] tracking-tight mb-6">
+          Your Next Adventure<br />
+          <span class="gradient-text">Starts Here</span>
+        </h1>
+        <p class="au-3 text-slate-400 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed mb-10">
+          Hotels, flights and car rentals — booked in seconds. Over 2 million properties in 190 countries waiting for you.
+        </p>
+        <div class="au-4 flex flex-wrap gap-3 justify-center">
+          <a href="#booking" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold px-8 py-3.5 rounded-full transition-all duration-300 shadow-xl shadow-indigo-500/30 hover:-translate-y-1 btn-press">
+            Search Deals
+          </a>
+          <a href="#destinations" class="glass text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 btn-press">
+            Explore →
+          </a>
+        </div>
+        <div class="au-5 flex flex-wrap justify-center gap-6 mt-12 text-sm text-slate-400">
+          <span class="flex items-center gap-1.5">✓ Free cancellation</span>
+          <span class="flex items-center gap-1.5">✓ No hidden fees</span>
+          <span class="flex items-center gap-1.5">✓ Best price guarantee</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="relative z-10 max-w-5xl mx-auto px-5 -mt-12">
+      <div class="glass rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/40">
+
+        <input class="tab-radio" type="radio" name="booking-tab" id="tab-hotel" checked />
+        <input class="tab-radio" type="radio" name="booking-tab" id="tab-flight" />
+        <input class="tab-radio" type="radio" name="booking-tab" id="tab-car" />
+
+        <div class="flex gap-1 bg-black/20 rounded-xl p-1 mb-6 tab-labels">
+          <label for="tab-hotel"  class="tab-btn">🏨 Hotels</label>
+          <label for="tab-flight" class="tab-btn">✈️ Flights</label>
+          <label for="tab-car"    class="tab-btn">🚗 Car Rental</label>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel-hotel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-end">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Destination</label>
+              <input class="booking-input" type="text" placeholder="City or property" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Check-in</label>
+              <input class="booking-input" type="date" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Check-out</label>
+              <input class="booking-input" type="date" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Guests</label>
+              <select class="booking-input">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4+ Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel-flight grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-end">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">From</label>
+              <input class="booking-input" type="text" placeholder="Origin city" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">To</label>
+              <input class="booking-input" type="text" placeholder="Destination city" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Departure</label>
+              <input class="booking-input" type="date" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Passengers</label>
+              <select class="booking-input">
+                <option>1 Adult</option>
+                <option>2 Adults</option>
+                <option>Family</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="panel-car grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-end">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Pick-up Location</label>
+              <input class="booking-input" type="text" placeholder="City or airport" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Pick-up Date</label>
+              <input class="booking-input" type="date" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Return Date</label>
+              <input class="booking-input" type="date" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1.5">Car Type</label>
+              <select class="booking-input">
+                <option>Economy</option>
+                <option>Compact</option>
+                <option>SUV</option>
+                <option>Luxury</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="mt-4 w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:-translate-y-0.5 btn-press text-base">
+            Search Available Options →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-5 py-16">
+      <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="stat-num text-4xl lg:text-5xl font-black tracking-tight">2M+</div>
+          <div class="text-slate-500 text-sm font-medium mt-1">Properties</div>
+        </div>
+        <div>
+          <div class="stat-num text-4xl lg:text-5xl font-black tracking-tight">190</div>
+          <div class="text-slate-500 text-sm font-medium mt-1">Countries</div>
+        </div>
+        <div>
+          <div class="stat-num text-4xl lg:text-5xl font-black tracking-tight">50M+</div>
+          <div class="text-slate-500 text-sm font-medium mt-1">Bookings Made</div>
+        </div>
+        <div>
+          <div class="stat-num text-4xl lg:text-5xl font-black tracking-tight">4.9★</div>
+          <div class="text-slate-500 text-sm font-medium mt-1">Average Rating</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="max-w-7xl mx-auto px-5 py-20">
+      <div class="reveal text-center mb-14">
+        <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-3">Why StayEasy</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">Everything you need,<br class="hidden sm:block" /> nothing you don't</h2>
+        <p class="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">From search to checkout, we've made every step effortless.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="reveal feature-card glass rounded-2xl p-7">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">⚡</div>
+          <h3 class="text-lg font-bold mb-2">Instant Confirmation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Get your booking confirmed in under 30 seconds. No waiting, no uncertainty.</p>
+        </div>
+        <div class="reveal feature-card glass rounded-2xl p-7" style="transition-delay:.08s">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">🛡️</div>
+          <h3 class="text-lg font-bold mb-2">Secure Payments</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Bank-level encryption on every transaction. Your data is always safe with us.</p>
+        </div>
+        <div class="reveal feature-card glass rounded-2xl p-7" style="transition-delay:.16s">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">💸</div>
+          <h3 class="text-lg font-bold mb-2">Best Price Guarantee</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Found it cheaper elsewhere? We'll match the price or refund the difference.</p>
+        </div>
+        <div class="reveal feature-card glass rounded-2xl p-7" style="transition-delay:.24s">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">↩️</div>
+          <h3 class="text-lg font-bold mb-2">Free Cancellation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Plans change. Cancel most bookings up to 24 hours before arrival, free of charge.</p>
+        </div>
+        <div class="reveal feature-card glass rounded-2xl p-7" style="transition-delay:.32s">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">🌍</div>
+          <h3 class="text-lg font-bold mb-2">Global Coverage</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">2 million+ hotels, 500+ airlines and 30,000+ car rental locations worldwide.</p>
+        </div>
+        <div class="reveal feature-card glass rounded-2xl p-7" style="transition-delay:.40s">
+          <div class="f-icon w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center text-2xl mb-5 shadow-lg shadow-indigo-500/30">🎧</div>
+          <h3 class="text-lg font-bold mb-2">24/7 Support</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Our team is always on call — by chat, phone, or email, any time of day or night.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="max-w-7xl mx-auto px-5 py-20 border-t border-white/5">
+      <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-3">Trending Now</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Popular Destinations</h2>
+        </div>
+        <a href="#" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold transition-colors shrink-0">View all →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]">
+          <img src="images/paris.jpg" alt="Paris" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Hotel</span>
+            <h3 class="text-xl font-bold">Paris, France</h3>
+            <p class="text-slate-400 text-sm">City of Light · 1,240 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $89/night</span>
+        </div>
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]" style="transition-delay:.1s">
+          <img src="images/london.jpg" alt="London" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Hotel</span>
+            <h3 class="text-xl font-bold">London, UK</h3>
+            <p class="text-slate-400 text-sm">Big Ben · 2,800 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $72/night</span>
+        </div>
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]" style="transition-delay:.2s">
+          <img src="images/new-york.jpg" alt="New York" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Hotel</span>
+            <h3 class="text-xl font-bold">New York, USA</h3>
+            <p class="text-slate-400 text-sm">The Big Apple · 4,100 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $110/night</span>
+        </div>
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]" style="transition-delay:.3s">
+          <img src="images/bali.jpg" alt="Bali" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Resort</span>
+            <h3 class="text-xl font-bold">Bali, Indonesia</h3>
+            <p class="text-slate-400 text-sm">Island Paradise · 2,800 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $55/night</span>
+        </div>
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]" style="transition-delay:.4s">
+          <img src="images/barcelona.jpg" alt="Barcelona" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Hotel</span>
+            <h3 class="text-xl font-bold">Barcelona, Spain</h3>
+            <p class="text-slate-400 text-sm">Cultural Capital · 2,100 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $78/night</span>
+        </div>
+
+        <div class="reveal dest-card rounded-2xl aspect-[4/3]" style="transition-delay:.5s">
+          <img src="images/dubai.jpg" alt="Dubai" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent flex flex-col justify-end p-5">
+            <span class="glass text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full self-start mb-2">Luxury</span>
+            <h3 class="text-xl font-bold">Dubai, UAE</h3>
+            <p class="text-slate-400 text-sm">City of Wonders · 1,900 properties</p>
+          </div>
+          <span class="absolute top-4 right-4 glass text-amber-400 text-sm font-bold px-3 py-1 rounded-full">from $95/night</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="reviews" class="border-t border-b border-white/5 py-20" style="background: linear-gradient(135deg, rgba(99,102,241,.05), rgba(245,158,11,.03))">
+      <div class="max-w-7xl mx-auto px-5">
+        <div class="reveal text-center mb-12">
+          <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-3">Loved by Travellers</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What our guests say</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="reveal testimonial-card glass rounded-2xl p-7">
+            <div class="text-amber-400 text-base mb-4 tracking-wider">★★★★★</div>
+            <blockquote class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "Booked a last-minute trip to Tokyo and found an amazing hotel at half the price I expected. The confirmation was instant. Absolutely love this platform!"
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-sm shrink-0">SL</div>
+              <div>
+                <strong class="text-sm block">Sarah Lin</strong>
+                <span class="text-slate-500 text-xs">Designer, San Francisco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal testimonial-card glass rounded-2xl p-7" style="transition-delay:.1s">
+            <div class="text-amber-400 text-base mb-4 tracking-wider">★★★★★</div>
+            <blockquote class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "The price match guarantee saved me €120 on our Bali resort. Customer support was also incredibly responsive when we needed to adjust dates."
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-sm shrink-0">MK</div>
+              <div>
+                <strong class="text-sm block">Marco Kessler</strong>
+                <span class="text-slate-500 text-xs">Engineer, Berlin</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal testimonial-card glass rounded-2xl p-7" style="transition-delay:.2s">
+            <div class="text-amber-400 text-base mb-4 tracking-wider">★★★★★</div>
+            <blockquote class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "We travel as a family of 5 and StayEasy always finds options that fit our budget. The UI is so clean — even my parents can use it without asking for help!"
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-sm shrink-0">AP</div>
+              <div>
+                <strong class="text-sm block">Aisha Patel</strong>
+                <span class="text-slate-500 text-xs">Teacher, London</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-28 text-center overflow-hidden border-b border-white/5">
+      <div class="orb orb-1 absolute w-96 h-96 bg-indigo-500/20 -top-24 left-1/4 pointer-events-none rounded-full" style="filter:blur(80px)"></div>
+      <div class="max-w-xl mx-auto px-5 relative z-10">
+        <h2 class="reveal text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+          Ready to <span class="gradient-text">explore the world?</span>
+        </h2>
+        <p class="reveal text-slate-400 text-lg leading-relaxed mb-8" style="transition-delay:.1s">
+          Join 50 million travellers who book smarter with StayEasy.
+        </p>
+        <div class="reveal flex flex-wrap gap-3 justify-center" style="transition-delay:.2s">
+          <a href="#booking" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold px-9 py-4 rounded-full transition-all duration-300 shadow-xl shadow-indigo-500/30 hover:-translate-y-1 btn-press text-lg">
+            Start Exploring
+          </a>
+          <a href="#features" class="glass text-white font-semibold px-9 py-4 rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 btn-press text-lg">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="glass border-t border-white/8 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/8">
+
+        <div>
+          <div class="text-xl font-black tracking-tight mb-3">
+            Stay<span class="text-indigo-500">Easy</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5 max-w-xs">
+            The world's most trusted travel booking platform. Simple, secure, and always the best price.
+          </p>
+          <div class="flex gap-2.5">
+            <a href="#" class="glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-400 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-0.5">𝕏</a>
+            <a href="#" class="glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-400 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-0.5">in</a>
+            <a href="#" class="glass w-9 h-9 rounded-lg flex items-center justify-center text-slate-400 hover:text-indigo-400 transition-all duration-300 hover:-translate-y-0.5">ig</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Hotels</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Flights</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Car Rental</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Vacation Packages</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Press</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Support</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Help Centre</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Cancellation Policy</a></li>
+            <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Accessibility</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-slate-500">
+        <p>© 2026 StayEasy. All rights reserved.</p>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300 transition-colors">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

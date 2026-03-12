@@ -1,0 +1,87 @@
+@use "variables" as *;
+
+.nav-link {
+  position: relative;
+  transition: color $trans;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $indigo;
+    border-radius: 1px;
+    transition: width $trans;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #f8fafc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  z-index: 49;
+  transform: translateX(100%);
+  transition: transform $trans;
+  padding: 5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 48;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $trans;
+}
+
+#nav-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+}
+#nav-toggle:checked ~ .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#nav-toggle:checked ~ label .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#nav-toggle:checked ~ label .hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#nav-toggle:checked ~ label .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

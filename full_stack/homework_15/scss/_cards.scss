@@ -1,0 +1,59 @@
+@use "variables" as *;
+
+.feature-card {
+  transition: all $trans;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba($indigo, 0.1), transparent);
+    opacity: 0;
+    transition: opacity $trans;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba($indigo, 0.25);
+
+    &::before {
+      opacity: 1;
+    }
+    .f-icon {
+      animation: glowPulse 1.5s ease infinite;
+    }
+  }
+}
+
+.dest-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+
+    img {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.testimonial-card {
+  transition: all $trans;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($indigo, 0.35) !important;
+  }
+}

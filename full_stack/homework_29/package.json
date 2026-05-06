@@ -1,0 +1,15 @@
+{
+  "name": "homework_29",
+  "version": "1.0.0",
+  "description": "Jest tests for ageClassification and weekFn",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "type": "commonjs",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

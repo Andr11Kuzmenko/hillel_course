@@ -78,4 +78,3 @@ homework_33/
 | `build`      | `clean` then run `styles`, `stylesMin`, `html`, `assets` in parallel. |
 | `serve`      | Start BrowserSync and watch for changes.                         |
 | `default`    | `build` + `serve` (the `npm start` entrypoint).                  |
-

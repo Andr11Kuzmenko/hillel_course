@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="text-center">
+        <h1 class="display-4">Contact Us</h1>
+        <p class="lead">
+            We are here to assist you with any inquiries, questions, or concerns you may have.
+        </p>
+    </header>
+    <div class="table-container">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    {% for header_name in header %}
+                        <th>{{ header_name }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.title }}</td>
+                        <td>{{ contact.email|upper }}</td>
+                        <td>{{ contact.phone|default:"***-***-****" }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

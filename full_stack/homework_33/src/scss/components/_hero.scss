@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as v;
+
+.hero {
+  background: linear-gradient(135deg, v.$color-accent-strong, v.$color-accent);
+  color: #fff;
+  padding: 80px 16px;
+  text-align: center;
+  user-select: none;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+
+  &__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    letter-spacing: 0.5px;
+  }
+
+  &__subtitle {
+    margin: 0 0 28px;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    opacity: 0.92;
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #fff;
+    color: v.$color-accent-strong;
+    border-radius: v.$radius-md;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: blur(4px);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: v.$shadow-md;
+    }
+  }
+}

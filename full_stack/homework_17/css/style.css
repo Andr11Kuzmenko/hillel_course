@@ -1,0 +1,222 @@
+:root {
+  --padding-container: 12px 80px;
+  --color-text-bw: #333333;
+  --color-text-bb: #333333;
+  --color-text-wb: #ffffff;
+  --color-text-ww: #ffffff;
+  --color-accent-span: #1a7df0;
+  --color-accent-logo: #3a59a1;
+  --color-border: #333333;
+  --color-svg-basic: #333333;
+  --color-bg: #ffffff;
+  --color-breadcrumbs: #33333380;
+  --color-primary: #1a7df0;
+  --color-button-main: #ffe711;
+  --color-button-main-hover: #f9d100;
+  --color-button-secondary: #1a7df0;
+  --color-button-secondary-hover: #005bc5;
+  --color-button-transparent-hover: #1a7df0;
+  --color-button-transparent-by: #333333;
+  --color-button-transparent-by-hover: #1a7df0;
+  --color-outline-tb: transparent;
+  --color-accent-hover: #f9d100;
+}
+
+body.dark-theme {
+  --color-text-bw: #ffffff;
+  --color-text-bb: #333333;
+  --color-text-wb: #333333;
+  --color-text-ww: #ffffff;
+  --color-accent-hover: #f9d100;
+  --color-accent-span: #ffe711;
+  --color-accent-logo: #ffffff;
+  --color-border: #ffffff;
+  --color-svg-basic: #ffffff;
+  --color-bg: #333333;
+  --color-breadcrumbs: #ffffffb0;
+  --color-button-main: #ffe91f;
+  --color-button-main-hover: #1a7df0;
+  --color-button-secondary: #ffffff;
+  --color-button-secondary-hover: #ffffff;
+  --color-button-transparent-hover: #ffe711;
+  --color-button-transparent-by: #ffe711;
+  --color-button-transparent-by-hover: #ffffff;
+  --color-outline-tb: #000000;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #333333;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 65px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 42px;
+}
+
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+p,
+button {
+  color: #333333;
+}
+
+.text-xl {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.text-lg {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.text-s {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.button {
+  min-width: 350px;
+  font-weight: 400;
+  font-size: 24px;
+  padding: 15px 68px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.button--primary {
+  background-color: #ffe711;
+}
+.button--primary:hover {
+  background-color: #f9d100;
+}
+.button--secondary {
+  color: #ffffff;
+  background-color: #1a7df0;
+}
+.button--secondary:hover {
+  background-color: #005bc5;
+}
+.button--transparent {
+  background-color: transparent;
+  outline: 1px solid #333333;
+  outline-offset: -1px;
+}
+.button--transparent:hover {
+  outline-color: #1a7df0;
+  color: #1a7df0;
+}
+.button--transparent-bg {
+  min-width: 275px;
+  color: #ffffff;
+  background-color: transparent;
+  outline: 1px solid #ffffff;
+  outline-offset: -1px;
+}
+.button--transparent-bg:hover {
+  outline-color: #ffe711;
+  color: #ffe711;
+}
+.button--transparent-xs {
+  padding: 10px 31px;
+  font-size: 18px;
+  background-color: transparent;
+  outline: 1px solid #333333;
+  outline-offset: -1px;
+}
+.button--transparent-xs:hover {
+  outline-color: #1a7df0;
+  color: #1a7df0;
+}
+
+.menu {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+a {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #333333;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: 0.3s;
+}
+a:hover {
+  color: #1a7df0;
+  border-color: #1a7df0;
+}
+
+.ticker {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-block: 25px;
+  min-height: 75px;
+  border-top: 5px solid #1a7df0;
+  border-bottom: 5px solid #ffe711;
+  overflow: hidden;
+  background-color: white;
+}
+.ticker__text {
+  font-weight: 400;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+.ticker__track {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  animation: ticker 10s linear infinite;
+}
+.ticker__track span::after {
+  content: "";
+  width: 14px;
+  height: 10px;
+  margin-left: 25px;
+  background-image: url("../../svg_icons/flag.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track {
+    animation: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

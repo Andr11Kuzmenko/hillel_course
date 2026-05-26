@@ -1,0 +1,40 @@
+.hero {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+  &__logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__title {
+    margin: 1rem 0 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  &__subtitle {
+    margin: 0 0 1.5rem;
+    color: #475569;
+  }
+
+  &__search {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+
+  &__results {
+    margin-top: 1rem;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+  }
+}

@@ -1,0 +1,2 @@
+INFO:root:Method: add has been called with args: (5, 3)
+INFO:root:Method: subtract has been called with args: (5, 3)

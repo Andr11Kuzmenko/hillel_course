@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: $slate-900;
+}
+::-webkit-scrollbar-thumb {
+  background: $indigo;
+  border-radius: 3px;
+  &:hover {
+    background: $indigo-d;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-num {
+  background: linear-gradient(135deg, $indigo, $amber);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fadeUp 0.7s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+  }
+}

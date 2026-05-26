@@ -1,0 +1,23 @@
+// LESS preprocessor — compiled by less-loader.
+@accent: #1a7df0;
+@accent-dark: #005bc5;
+
+.hero__title {
+  color: @accent;
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.25rem;
+  background: @accent;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: @accent-dark;
+  }
+}

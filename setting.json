@@ -1,0 +1,21 @@
+{
+  "files.autoSave": "onFocusChange", // Зберігати файл автоматично, коли фокус іде з редактора (перемкнувся на інше вікно/вкладку)
+  "editor.formatOnSave": true, // Автоформатувати файл під час збереження
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Використовувати Prettier як форматер за замовчуванням
+  "editor.tabSize": 2, // Ширина табуляції — 2 пробіли
+  "editor.insertSpaces": true, // Вставляти пробіли замість символа табуляції
+  "files.eol": "\n", // Кінець рядка — LF (Unix-стиль)
+  "files.trimTrailingWhitespace": true, // При збереженні прибирати пробіли в кінці рядків
+  "files.insertFinalNewline": true, // Додавати фінальний порожній рядок у кінці файлу
+  "emmet.includeLanguages": {
+    // Увімкнути/розширити підтримку Emmet для мов нижче
+    "javascript": "javascriptreact", // Emmet-шорткоди працюватимуть у .js як у JSX
+    "typescript": "typescriptreact", // Emmet для .ts як у TSX
+    "scss": "css" // Emmet у SCSS поводиться як у CSS
+  },
+  "editor.rulers": [100], // Вертикальні лінії-орієнтири на вказаних колонках
+  "editor.wordWrap": "bounded", // Переносити рядки, але не далі за wordWrapColumn
+  "editor.wordWrapColumn": 100,
+  "workbench.editor.empty.hint": "hidden",
+  "cSpell.userWords": ["sameday"] // Колонка, на якій VSCode м’яко переносить рядки (візуально)
+}

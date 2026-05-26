@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 27</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <main class="page">
+        <h1 class="page__title">Slider</h1>
+
+        <div class="slider" id="slider" tabindex="0" aria-roledescription="carousel" aria-label="Image gallery">
+            <div class="slider__viewport">
+                <ul class="slider__track" id="sliderTrack">
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/1.jpg" alt="Slide 1" draggable="false">
+                    </li>
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/2.jpg" alt="Slide 2" draggable="false">
+                    </li>
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/3.jpg" alt="Slide 3" draggable="false">
+                    </li>
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/4.png" alt="Slide 4" draggable="false">
+                    </li>
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/5.jpeg" alt="Slide 5" draggable="false">
+                    </li>
+                    <li class="slider__slide">
+                        <img class="slider__image" src="images/6.jpg" alt="Slide 6" draggable="false">
+                    </li>
+                </ul>
+            </div>
+
+            <button class="slider__btn slider__btn--prev" id="prevBtn" type="button" aria-label="Previous slide">
+                <span aria-hidden="true">&#10094;</span>
+            </button>
+            <button class="slider__btn slider__btn--next" id="nextBtn" type="button" aria-label="Next slide">
+                <span aria-hidden="true">&#10095;</span>
+            </button>
+
+            <div class="slider__controls">
+                <button class="slider__toggle" id="toggleBtn" type="button" aria-label="Pause autoplay">
+                    <span class="slider__toggle-label" id="toggleLabel">Pause</span>
+                </button>
+                <ul class="slider__dots" id="sliderDots" role="tablist" aria-label="Go to slide"></ul>
+            </div>
+        </div>
+
+        <p class="page__hint">
+            Arrows ← → to navigate • swipe or drag with mouse • button to pause
+        </p>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

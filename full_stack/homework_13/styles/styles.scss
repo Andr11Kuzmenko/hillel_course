@@ -1,0 +1,92 @@
+@use "sass:map";
+
+$stroke-width: 5px;
+
+$colors: (
+  square-fill: #4caf50,
+  square-stroke: #1b5e20,
+  rectangle-fill: #2196f3,
+  rectangle-stroke: #0d47a1,
+  circle-fill: #ff9800,
+  circle-stroke: #e65100,
+  ellipse-fill: #9c27b0,
+  ellipse-stroke: #4a148c,
+);
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+svg {
+  background: white;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+.shape {
+  stroke-width: $stroke-width;
+}
+
+.square {
+  fill: map.get($colors, square-fill);
+  stroke: map.get($colors, square-stroke);
+}
+
+.rectangle {
+  fill: map.get($colors, rectangle-fill);
+  stroke: map.get($colors, rectangle-stroke);
+}
+
+.circle {
+  fill: map.get($colors, circle-fill);
+  stroke: map.get($colors, circle-stroke);
+}
+
+.ellipse {
+  fill: map.get($colors, ellipse-fill);
+  stroke: map.get($colors, ellipse-stroke);
+}
+
+.orbit {
+  transform-origin: 350px 200px;
+  animation: rotateOrbit linear infinite;
+}
+
+.orbit-1 {
+  animation-duration: 6s;
+}
+.orbit-2 {
+  animation-duration: 8s;
+}
+.orbit-3 {
+  animation-duration: 5s;
+}
+.orbit-4 {
+  animation-duration: 10s;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated {
+  animation: colorChange 3s infinite alternate ease-in-out;
+}
+
+@keyframes colorChange {
+  0% {
+    fill: #ff9800;
+    stroke: #e65100;
+  }
+  100% {
+    fill: #ffeb3b;
+    stroke: #f57f17;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as v;
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+  &__btn {
+    padding: 12px 28px;
+    background-color: transparent;
+    color: v.$color-accent;
+    border: 1px solid v.$color-accent;
+    border-radius: v.$radius-md;
+    font-weight: 600;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: v.$color-accent;
+      color: v.$color-bg;
+    }
+  }
+}

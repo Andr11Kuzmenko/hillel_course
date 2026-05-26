@@ -1,0 +1,14 @@
+@use "variables" as v;
+
+@mixin respond-up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin card {
+  background-color: v.$color-bg-elev;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  box-shadow: v.$shadow-md;
+}

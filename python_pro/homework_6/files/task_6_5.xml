@@ -1,0 +1,27 @@
+<products>
+    <product>
+        <name>iPhone 16</name>
+        <price>799</price>
+        <quantity>100</quantity>
+    </product>
+    <product>
+        <name>iPhone 15</name>
+        <price>699</price>
+        <quantity>300</quantity>
+    </product>
+    <product>
+        <name>iPhone 14</name>
+        <price>599</price>
+        <quantity>500</quantity>
+    </product>
+    <product>
+        <name>iPhone 16 Pro</name>
+        <price>999</price>
+        <quantity>300</quantity>
+    </product>
+    <product>
+        <name>iPhone 16 Pro Max</name>
+        <price>1099</price>
+        <quantity>20</quantity>
+    </product>
+</products>

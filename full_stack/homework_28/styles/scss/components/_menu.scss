@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.menu {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    &__link {
+        display: block;
+        padding: 24px;
+        background: $color-surface;
+        border-radius: $radius-lg;
+        text-align: left;
+        text-decoration: none;
+        color: $color-text;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        transition: transform $transition-fast, box-shadow $transition-fast;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    &__desc {
+        display: block;
+        color: $color-muted;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}

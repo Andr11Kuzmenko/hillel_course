@@ -1,0 +1,46 @@
+p, div {
+    min-height: 4vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: brown;
+}
+
+#divid {
+    background-color: red;
+}
+
+div[data-attr="some"] {
+    background-color: yellow;
+}
+
+.div-color-blue {
+    background-color: blue;
+}
+
+div > p {
+    background-color: darkgreen;
+}
+
+div.with-child p {
+    background-color: aqua;
+}
+
+p + div {
+    background-color: chocolate;
+}
+
+.div-with-id {
+    background-color: black;
+}
+
+#divid2 {
+    background-color: cornflowerblue;
+}
+
+.parent-div > .child-div {
+    background-color: darkgray;
+}

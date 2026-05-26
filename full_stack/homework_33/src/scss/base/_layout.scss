@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as v;
+
+body {
+  background-color: v.$color-bg;
+  color: v.$color-text;
+}
+
+.container {
+  width: 100%;
+  max-width: v.$container-max;
+  margin: 0 auto;
+  padding: 0 16px;
+}

@@ -1,0 +1,5 @@
+@mixin respond-up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 32 — Movie LiveSearch (OMDb)</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Movie LiveSearch</h1>
+      <p class="header__subtitle">Powered by OMDb API</p>
+    </div>
+  </header>
+
+  <main class="main container">
+    <form class="search" id="search-form" autocomplete="off">
+      <div class="search__row">
+        <div class="search__group search__group--grow">
+          <label for="search-input" class="search__label">Search</label>
+          <div class="search__field">
+            <input
+              id="search-input"
+              class="search__input"
+              type="text"
+              placeholder="Type a movie title..."
+              aria-describedby="search-status"
+            >
+            <button type="button" class="search__clear" id="search-clear" aria-label="Clear" hidden>&times;</button>
+          </div>
+        </div>
+
+        <div class="search__group">
+          <label for="type-filter" class="search__label">Type</label>
+          <select id="type-filter" class="search__select">
+            <option value="">All</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+          </select>
+        </div>
+      </div>
+      <p id="search-status" class="search__status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="results" id="results" aria-live="polite"></section>
+
+    <div class="load-more">
+      <button type="button" id="load-more" class="load-more__btn" hidden>Load more</button>
+    </div>
+  </main>
+
+  <div class="modal" id="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document">
+      <button type="button" class="modal__close" aria-label="Close" data-close>&times;</button>
+      <div class="modal__body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

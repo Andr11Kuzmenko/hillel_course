@@ -1,0 +1,52 @@
+.contact_section {
+    padding: 176px 0 60px;
+    max-width: 500px;
+    margin: auto;
+}
+.contact_section .contact_form {
+    background: rgb(245, 245, 250);
+    border-radius: 12px;
+    padding: 30px;
+}
+.contact_section .contact_form h5 {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 30px;
+    color: rgb(240, 20, 90);
+}
+.contact_section .contact_form form label {
+    display: none;
+}
+.contact_section .contact_form form input, .contact_section .contact_form form textarea {
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #B3B3BA;
+    margin-bottom: 15px;
+}
+
+
+.contact_section .send_message .btn {
+    padding: 18px 163px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #24A3FF;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border: 0;
+    border-radius: 12px;
+    width: 100%;
+}

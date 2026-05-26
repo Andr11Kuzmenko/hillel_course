@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.search {
+  max-width: 720px;
+  margin: 0 auto 32px;
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include m.respond-up(v.$bp-sm) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &--grow {
+      flex: 1;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: v.$color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: v.$color-bg-elev;
+    color: v.$color-text;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-md;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: v.$color-text-muted;
+    }
+
+    &:focus {
+      border-color: v.$color-accent;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+  }
+
+  &__input {
+    padding-right: 44px;
+  }
+
+  &__select {
+    appearance: none;
+    cursor: pointer;
+    min-width: 140px;
+    background-image: linear-gradient(45deg, transparent 50%, v.$color-text-muted 50%),
+      linear-gradient(135deg, v.$color-text-muted 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+  }
+
+  &__clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: v.$color-text-muted;
+    font-size: 1.4rem;
+    line-height: 1;
+    border-radius: 50%;
+
+    &:hover {
+      color: v.$color-text;
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  &__status {
+    margin: 10px 2px 0;
+    min-height: 1.2em;
+    font-size: 0.875rem;
+    color: v.$color-text-muted;
+
+    &--error {
+      color: v.$color-danger;
+    }
+  }
+}

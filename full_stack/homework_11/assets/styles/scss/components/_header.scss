@@ -1,0 +1,93 @@
+@use "../abstracts/index" as *;
+
+.main-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: $color-surface-primary;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+  text-transform: uppercase;
+  color: $color-text-primary;
+  padding-block: 5rem;
+
+  &__item {
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      color: $color-text-secondary;
+    }
+
+    &-active {
+      color: $color-text-accent;
+      cursor: default;
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+
+  span {
+    width: 28px;
+    height: 3px;
+    background: #000;
+    transition: 0.3s ease;
+  }
+}
+
+@include respond(md) {
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+    position: relative;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    background: $color-surface-primary;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu-toggle:checked ~ .nav {
+    max-height: 400px;
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .hamburger {
+    display: flex;
+    padding-left: 1rem;
+  }
+}

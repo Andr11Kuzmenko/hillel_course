@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>{{ category }}</h1>
+    <h4>Related Active Ads</h4>
+    <ul>
+        {% for ad in ads %}
+            <li>
+                {{ ad }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

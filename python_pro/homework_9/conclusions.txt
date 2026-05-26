@@ -1,0 +1,15 @@
+Data Replication in Cassandra
+1. Data is stored across multiple nodes in the cluster, and each node holds copies of the data.
+2. When data is written or updated, the replicas on other nodes are synchronized to maintain consistency.
+3. If a node fails, other replicas are still available, ensuring that data can still be accessed without loss.
+
+Horizontal Scaling
+Sharding (Partitioning):
+    Cassandra uses a partitioning mechanism to distribute data across nodes in the cluster.
+    Each node is responsible for a certain portion of the data determined by the partition key.
+Hashing:
+    A hashing function is used to determine which node will store a specific piece of data.
+    The data is distributed among the nodes based on the hash of the partition key.
+Adding New Nodes:
+    When a new node is added to the cluster, Cassandra automatically rebalances the data across the new nodes,
+    increasing the cluster's capacity without requiring downtime or manual intervention.

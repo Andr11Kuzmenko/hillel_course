@@ -1,0 +1,20 @@
+<university>
+    <faculty>
+        <name>Meht</name>
+        <group>
+            <name>KI</name>
+            <student>
+                <name>Andrii</name>
+                <number>123456</number>
+            </student>
+            <student>
+                <name>Oleksandr</name>
+                <number>12365</number>
+            </student>
+            <student>
+                <name>Ivan</name>
+                <number>654321</number>
+            </student>
+        </group>
+    </faculty>
+</university>

@@ -1,0 +1,54 @@
+@use "global";
+
+.ticker {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-block: 25px;
+  min-height: 75px;
+  border-top: 5px solid global.$accent-main-primary;
+  border-bottom: 5px solid global.$accent-aux-primary;
+  overflow: hidden;
+  background-color: white;
+
+  &__text {
+    font-weight: 400;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__track {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    animation: ticker 10s linear infinite;
+
+    & span::after {
+      content: "";
+      width: 14px;
+      height: 10px;
+      margin-left: 25px;
+
+      background-image: url("../../svg_icons/flag.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track {
+    animation: none;
+  }
+}

@@ -1,0 +1,97 @@
+@use "variables" as *;
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bgDrift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba($indigo, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba($indigo, 0);
+  }
+}
+
+.au-1 {
+  animation: fadeUp 0.7s ease both;
+}
+.au-2 {
+  animation: fadeUp 0.7s ease 0.15s both;
+}
+.au-3 {
+  animation: fadeUp 0.7s ease 0.3s both;
+}
+.au-4 {
+  animation: fadeUp 0.7s ease 0.45s both;
+}
+.au-5 {
+  animation: fadeUp 0.7s ease 0.6s both;
+}
+
+.orb {
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+.orb-1 {
+  animation: float 7s ease-in-out infinite;
+}
+.orb-2 {
+  animation: float 9s ease-in-out infinite 3s;
+}
+.orb-3 {
+  animation: float 6s ease-in-out infinite 1.5s;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0c1a2e, #0f172a);
+  background-size: 400% 400%;
+  animation: bgDrift 10s ease infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8, #a78bfa, $amber, #818cf8);
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}

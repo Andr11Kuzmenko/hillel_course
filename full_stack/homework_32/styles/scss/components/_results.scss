@@ -1,0 +1,95 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.results {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+
+  @include m.respond-up(v.$bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-up(v.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include m.respond-up(v.$bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: v.$color-text-muted;
+    padding: 32px 16px;
+  }
+}
+
+.movie {
+  @include m.card;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: v.$color-accent;
+  }
+
+  &__poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: #0b1220;
+  }
+
+  &__body {
+    padding: 12px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: v.$color-text;
+  }
+
+  &__meta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+  }
+
+  &__type {
+    padding: 2px 8px;
+    background-color: rgba(56, 189, 248, 0.12);
+    color: v.$color-accent;
+    border-radius: v.$radius-sm;
+    text-transform: capitalize;
+    font-size: 0.75rem;
+  }
+
+  &__btn {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background-color: v.$color-accent-strong;
+    color: #fff;
+    border: none;
+    border-radius: v.$radius-sm;
+    font-weight: 600;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: v.$color-accent;
+    }
+  }
+}

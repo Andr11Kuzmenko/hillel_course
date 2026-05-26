@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h4>All Categories</h4>
+    <ul>
+        {% for cat in categories %}
+            <li>
+                <a href="{% url 'show_category' cat.id %}">{{ cat }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <h4>All Ads</h4>
+    <ul>
+        {% for ad in ads %}
+            <li>
+                {{ ad }}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <h4>All Comments</h4>
+    <ul>
+        {% for com in comments %}
+            <li>
+                {{ com }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

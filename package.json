@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "scss": "sass full_stack/homework_11/assets/styles/scss/main.scss full_stack/homework_11/assets/styles/style.css --watch",
+    "scss:hw32": "sass full_stack/homework_32/styles/scss/main.scss full_stack/homework_32/styles/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

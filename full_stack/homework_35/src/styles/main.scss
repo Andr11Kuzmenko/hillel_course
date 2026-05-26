@@ -1,0 +1,13 @@
+@use './hero';
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #fafafa;
+  color: #1f2937;
+}

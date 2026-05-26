@@ -21,10 +21,6 @@ const paths = {
     src: 'src/*.html',
     dest: 'dist',
   },
-  assets: {
-    src: 'src/assets/**/*',
-    dest: 'dist/assets',
-  },
 };
 
 export const clean = () => deleteAsync(['dist']);
@@ -54,12 +50,6 @@ export function html() {
   return gulp.src(paths.html.src).pipe(gulp.dest(paths.html.dest));
 }
 
-export function assets() {
-  return gulp
-    .src(paths.assets.src, { allowEmpty: true, encoding: false })
-    .pipe(gulp.dest(paths.assets.dest));
-}
-
 export function serve() {
   browserSync.init({
     server: { baseDir: 'dist' },
@@ -69,7 +59,6 @@ export function serve() {
 
   gulp.watch(paths.scss.src, styles);
   gulp.watch(paths.html.src, gulp.series(html, reload));
-  gulp.watch(paths.assets.src, gulp.series(assets, reload));
 }
 
 function reload(done) {
@@ -79,7 +68,7 @@ function reload(done) {
 
 export const build = gulp.series(
   clean,
-  gulp.parallel(styles, stylesMin, html, assets)
+  gulp.parallel(styles, stylesMin, html)
 );
 
 export default gulp.series(build, serve);

@@ -53,7 +53,7 @@ Removes the `dist/` folder.
 
 ```
 homework_33/
-├── gulpfile.js          # Gulp tasks: clean, styles, stylesMin, html, assets, serve, build
+├── gulpfile.js          # Gulp tasks: clean, styles, stylesMin, html, serve, build
 ├── package.json
 ├── .browserslistrc      # Autoprefixer targets
 ├── src/

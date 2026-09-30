@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+  h1 Users
+  p.meta Дані з MongoDB, колекція 
+    code users
+    |  — знайдено: #{total}
+  form.card.filters(method="get" action="/users")
+    label Пошук
+      input(type="search" name="q" value=query.q placeholder="name або email")
+    label Місто
+      select(name="city")
+        option(value="") Усі
+        each city in cities
+          option(value=city selected=query.city === city)= city
+    label Сортування
+      select(name="sort")
+        each field in ['name', 'age', 'city', 'createdAt']
+          option(value=field selected=query.sort === field)= field
+    label Порядок
+      select(name="order")
+        option(value="asc" selected=query.order !== 'desc') asc
+        option(value="desc" selected=query.order === 'desc') desc
+    button(type="submit") Застосувати
+  if users.length
+    table
+      thead
+        tr
+          th Name
+          th Email
+          th Age
+          th City
+          th Role
+      tbody
+        each user in users
+          tr
+            td: a(href=`/users/${user._id}`)= user.name
+            td= user.email
+            td= user.age != null ? user.age : '—'
+            td= user.city || '—'
+            td= user.role || '—'
+  else
+    p Користувачів не знайдено. Запустіть 
+      code npm run seed
+      | , щоб заповнити базу.

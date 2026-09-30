@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Register
+  if error
+    p.error= error
+  form.card(method="post" action="/auth/register")
+    label Name
+      input(type="text" name="name" value=values.name)
+    label Email
+      input(type="email" name="email" required value=values.email)
+    label Password (min 6)
+      input(type="password" name="password" required minlength="6")
+    button(type="submit") Register
+  p Вже є акаунт? 
+    a(href="/auth/login") Увійти

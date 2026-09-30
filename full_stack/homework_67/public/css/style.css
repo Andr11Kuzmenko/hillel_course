@@ -1,0 +1,46 @@
+:root {
+  --bg: #f6f7f9;
+  --fg: #1f2328;
+  --muted: #57606a;
+  --card: #ffffff;
+  --border: #d0d7de;
+  --accent: #0969da;
+  --tag-bg: #ddf4ff;
+  --header: #24292f;
+}
+
+body.theme-dark {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #8d96a0;
+  --card: #161b22;
+  --border: #30363d;
+  --accent: #4493f8;
+  --tag-bg: #12263f;
+  --header: #010409;
+}
+
+body { font-family: system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--fg); }
+a { color: var(--accent); }
+header { background: var(--header); padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+header a { color: #fff; margin-right: 16px; text-decoration: none; }
+header .right { color: #c9d1d9; font-size: 14px; }
+main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+table { width: 100%; border-collapse: collapse; background: var(--card); }
+th, td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+.tag { display: inline-block; background: var(--tag-bg); color: var(--accent); border-radius: 12px; padding: 2px 8px; margin-right: 4px; font-size: 12px; }
+.meta { color: var(--muted); font-size: 14px; }
+.error { color: #cf222e; }
+form.card label { display: block; margin-bottom: 12px; }
+form.card input { display: block; width: 100%; max-width: 320px; padding: 6px 8px; margin-top: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg); }
+button { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--accent); color: #fff; cursor: pointer; }
+footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+form.filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+form.filters label { margin: 0; }
+form.filters input, form.filters select { display: block; margin-top: 4px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg); }
+a.tag { text-decoration: none; }
+code { background: var(--tag-bg); padding: 1px 4px; border-radius: 4px; }
+.table-wrap { overflow-x: auto; margin-bottom: 16px; }
+nav.pager { display: flex; gap: 16px; align-items: center; margin: 12px 0; }
+h2 { margin-top: 28px; }

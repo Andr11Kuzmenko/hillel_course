@@ -1,0 +1,16 @@
+<%- include('../partials/header', { title }) %>
+<a href="/articles">&larr; Back to articles</a>
+<article class="card">
+  <h1><%= article.title %></h1>
+  <p class="meta">
+    <%= article.author %> · <%= formatDate(article.publishedAt) %> · <%= article.category %>
+    · &#128065; <%= article.views %> · &#9829; <%= article.likes %>
+  </p>
+  <p><%= article.content %></p>
+  <p>
+    <% (article.tags || []).forEach((tag) => { %><a class="tag" href="/articles?tag=<%= encodeURIComponent(tag) %>"><%= tag %></a><% }) %>
+  </p>
+  <p class="meta">_id: <code><%= article._id %></code></p>
+</article>
+<p><a href="/api/articles/<%= article._id %>">JSON</a></p>
+<%- include('../partials/footer') %>

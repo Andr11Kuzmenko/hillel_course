@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Protected page
+  .card
+    p Вітаємо, #{user.name}! Цю сторінку видно лише з валідним JWT.
+    dl
+      dt ID
+      dd= user.id
+      dt Email
+      dd= user.email
+  p
+    a(href="/auth/me") /auth/me (JSON)
+    |  · 
+    a(href="/auth/logout") Logout

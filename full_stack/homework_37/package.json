@@ -1,0 +1,15 @@
+{
+  "name": "homework-37",
+  "version": "1.0.0",
+  "description": "HW 37.1. Поглиблене вивчення TypeScript через практичні задачі",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "tsc && node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

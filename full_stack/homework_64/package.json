@@ -1,0 +1,23 @@
+{
+  "name": "homework-64",
+  "version": "1.0.0",
+  "description": "Express: авторизація через Passport (local strategy + sessions)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "favicon": "node scripts/generate-favicon.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.3"
+  }
+}

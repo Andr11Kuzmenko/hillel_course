@@ -1,0 +1,11 @@
+{
+  "name": "homework-55",
+  "version": "1.0.0",
+  "description": "Асинхронна робота з файлами в Node.js (fs/promises)",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

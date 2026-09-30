@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Get root route
+  p Навчальний Express-сервер: шаблонізатори PUG та EJS, статичні файли, cookies та JWT.
+  ul
+    li: a(href="/users") Список користувачів (PUG)
+    li: a(href="/articles") Список статей (EJS)
+    li: a(href="/protected") Захищена сторінка (JWT)
+    li: a(href="/preferences") Поточні налаштування з cookies (JSON)
+    li: a(href="/session") Інформація про сесію (JSON)
+  p Візитів у поточній сесії: #{visits}

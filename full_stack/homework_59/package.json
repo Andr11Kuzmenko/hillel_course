@@ -1,0 +1,11 @@
+{
+  "name": "homework-59",
+  "version": "1.0.0",
+  "description": "Асинхронне стиснення та розпакування Gzip (zlib + streams)",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

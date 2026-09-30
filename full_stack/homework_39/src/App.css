@@ -1,0 +1,84 @@
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.task-form .input {
+  flex: 1;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.task-item__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.task-item--done span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-item__remove {
+  border: none;
+  background: none;
+  color: #dc2626;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.stats {
+  margin-bottom: 12px;
+}
+
+.stats p {
+  margin: 0 0 6px;
+}
+
+.stats__bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stats__fill {
+  height: 100%;
+  background: #22c55e;
+  transition: width 0.3s;
+}
+
+.counter-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.counter-display__value {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.counter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

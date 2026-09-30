@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1 Login
+  if error
+    p.error= error
+  form.card(method="post" action="/auth/login")
+    input(type="hidden" name="next" value=next)
+    label Email
+      input(type="email" name="email" required value=values.email)
+    label Password
+      input(type="password" name="password" required minlength="6")
+    button(type="submit") Login
+  p Немає акаунта? 
+    a(href="/auth/register") Зареєструватися

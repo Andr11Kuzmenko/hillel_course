@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %> | Homework 65</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="theme-<%= theme %>">
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/users">Users (PUG)</a>
+      <a href="/articles">Articles (EJS)</a>
+      <a href="/protected">Protected</a>
+      <a href="/profile">Profile</a>
+    </nav>
+    <div class="right">
+      <% if (theme === 'dark') { %>
+        <a href="/preferences/theme/light?redirect=<%= encodeURIComponent(currentPath) %>">&#9728; Light</a>
+      <% } else { %>
+        <a href="/preferences/theme/dark?redirect=<%= encodeURIComponent(currentPath) %>">&#9790; Dark</a>
+      <% } %>
+      <% if (currentUser) { %>
+        <span><%= currentUser.email %></span>
+        <a href="/auth/logout">Logout</a>
+      <% } else { %>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      <% } %>
+    </div>
+  </header>
+  <main>

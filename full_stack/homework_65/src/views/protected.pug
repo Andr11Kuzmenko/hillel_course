@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Protected page
+  .card
+    p Вітаємо, #{user.name}! Цю сторінку видно лише після входу (ensureAuthenticated).
+  p
+    a(href="/profile") Profile
+    |  · 
+    a(href="/auth/logout") Logout

@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form__field .input,
+.form__field select {
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.form .btn {
+  align-self: flex-start;
+}
+
+.preview,
+.response {
+  margin-top: 20px;
+}
+
+.preview h3,
+.response h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+pre {
+  margin: 0;
+  padding: 12px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.response pre {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form .input {
+  flex: 1;
+}

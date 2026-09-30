@@ -1,0 +1,12 @@
+{
+  "name": "homework-58",
+  "version": "1.0.0",
+  "description": "Захищені криптографічні функції на node:crypto",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test"
+  }
+}

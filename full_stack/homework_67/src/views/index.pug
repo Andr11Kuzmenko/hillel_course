@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Get root route
+  p Навчальний Express-сервер: шаблонізатори PUG та EJS, статичні файли, cookies, Passport, MongoDB Atlas, курсори та агрегації.
+  ul
+    li: a(href="/users") Список користувачів (PUG)
+    li: a(href="/articles") Список статей (EJS)
+    li: a(href="/profile") Профіль (Passport)
+    li: a(href="/protected") Захищена сторінка (Passport)
+    li: a(href="/preferences") Поточні налаштування з cookies (JSON)
+    li: a(href="/session") Інформація про сесію (JSON)
+    li: a(href="/api/health") Стан підключення до MongoDB (JSON)
+    li: a(href="/stats") Статистика (aggregation pipeline)
+    li: a(href="/cursor/users") Пагінація курсором
+    li: a(href="/api/cursor/users/stream") Стрімінг користувачів курсором (NDJSON)
+  p Візитів у поточній сесії: #{visits}

@@ -1,0 +1,12 @@
+{
+  "name": "homework-54",
+  "version": "1.0.0",
+  "description": "Базові операції з буфером у Node.js: перетворення між Base64 та Hex",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Profile
+  .card
+    p Ви увійшли через Passport (local strategy). Стан автентифікації зберігається в сесії.
+    dl
+      dt ID
+      dd= user.id
+      dt Name
+      dd= user.name
+      dt Email
+      dd= user.email
+      dt Registered
+      dd= user.createdAt
+      dt Visits in session
+      dd= visits
+  p
+    a(href="/protected") Protected page
+    |  · 
+    a(href="/auth/logout") Logout

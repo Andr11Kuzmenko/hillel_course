@@ -1,0 +1,52 @@
+extends ../layout
+
+mixin pager()
+  nav.pager
+    if hasPrevPage
+      a(href=`/cursor/users?page=${page - 1}&pageSize=${pageSize}&city=${encodeURIComponent(city)}`) ← Prev
+    else
+      span.meta ← Prev
+    span Сторінка #{page} з #{totalPages} (усього #{total})
+    if hasNextPage
+      a(href=`/cursor/users?page=${page + 1}&pageSize=${pageSize}&city=${encodeURIComponent(city)}`) Next →
+    else
+      span.meta Next →
+
+block content
+  h1 Users — cursor pagination
+  p.meta
+    | Документи читаються курсором 
+    code find().sort().skip().limit()
+    |  та ітеруються через 
+    code cursor.hasNext() / cursor.next()
+    | .
+  form.card.filters(method="get" action="/cursor/users")
+    label Місто
+      input(type="text" name="city" value=city)
+    label На сторінці
+      input(type="number" name="pageSize" value=pageSize min="1" max="50")
+    button(type="submit") Показати
+  +pager()
+  .table-wrap
+    table
+      thead
+        tr
+          th #
+          th Name
+          th Email
+          th Age
+          th City
+      tbody
+        each user, i in items
+          tr
+            td= (page - 1) * pageSize + i + 1
+            td: a(href=`/users/${user._id}`)= user.name
+            td= user.email
+            td= user.age != null ? user.age : '—'
+            td= user.city || '—'
+  +pager()
+  p.meta
+    | Стрімінг усіх документів: 
+    a(href="/api/cursor/users/stream") NDJSON
+    |  · 
+    a(href="/api/cursor/users/stream?format=json") JSON

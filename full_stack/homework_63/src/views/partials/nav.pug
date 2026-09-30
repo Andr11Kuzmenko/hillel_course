@@ -1,0 +1,17 @@
+header
+  nav
+    a(href="/") Home
+    a(href="/users") Users (PUG)
+    a(href="/articles") Articles (EJS)
+    a(href="/protected") Protected
+  .right
+    if theme === 'dark'
+      a(href=`/preferences/theme/light?redirect=${encodeURIComponent(currentPath)}`) ☀ Light
+    else
+      a(href=`/preferences/theme/dark?redirect=${encodeURIComponent(currentPath)}`) ☾ Dark
+    if currentUser
+      span #{currentUser.email} 
+      a(href="/auth/logout") Logout
+    else
+      a(href="/auth/login") Login
+      a(href="/auth/register") Register

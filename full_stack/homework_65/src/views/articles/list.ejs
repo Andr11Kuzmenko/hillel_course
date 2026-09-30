@@ -1,0 +1,41 @@
+<%- include('../partials/header', { title }) %>
+<h1>Articles</h1>
+<p class="meta">Дані з MongoDB, колекція <code>articles</code> — знайдено: <%= total %></p>
+<form class="card filters" method="get" action="/articles">
+  <label>Пошук
+    <input type="search" name="q" value="<%= query.q || '' %>" placeholder="title або content">
+  </label>
+  <label>Категорія
+    <select name="category">
+      <option value="">Усі</option>
+      <% categories.forEach((c) => { %>
+        <option value="<%= c %>" <%= query.category === c ? 'selected' : '' %>><%= c %></option>
+      <% }) %>
+    </select>
+  </label>
+  <label>Сортування
+    <select name="sort">
+      <% ['publishedAt', 'views', 'likes', 'title'].forEach((f) => { %>
+        <option value="<%= f %>" <%= query.sort === f ? 'selected' : '' %>><%= f %></option>
+      <% }) %>
+    </select>
+  </label>
+  <button type="submit">Застосувати</button>
+</form>
+<% if (articles.length) { %>
+  <% articles.forEach((article) => { %>
+    <div class="card">
+      <h2><a href="/articles/<%= article._id %>"><%= article.title %></a></h2>
+      <p class="meta">
+        <%= article.author %> · <%= formatDate(article.publishedAt) %> · <%= article.category %>
+        · &#128065; <%= article.views %> · &#9829; <%= article.likes %>
+      </p>
+      <p>
+        <% (article.tags || []).forEach((tag) => { %><a class="tag" href="/articles?tag=<%= encodeURIComponent(tag) %>"><%= tag %></a><% }) %>
+      </p>
+    </div>
+  <% }) %>
+<% } else { %>
+  <p>Статей не знайдено. Запустіть <code>npm run seed</code>, щоб заповнити базу.</p>
+<% } %>
+<%- include('../partials/footer') %>

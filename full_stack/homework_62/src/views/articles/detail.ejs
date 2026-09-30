@@ -1,0 +1,11 @@
+<%- include('../partials/header', { title }) %>
+<a href="/articles">&larr; Back to articles</a>
+<article class="card">
+  <h1><%= article.title %></h1>
+  <p class="meta">ID: <%= article.id %> · <%= article.author %> · <%= article.createdAt %></p>
+  <p><%= article.content %></p>
+  <p>
+    <% article.tags.forEach((tag) => { %><span class="tag"><%= tag %></span><% }) %>
+  </p>
+</article>
+<%- include('../partials/footer') %>

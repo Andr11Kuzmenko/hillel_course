@@ -1,0 +1,12 @@
+{
+  "name": "homework-57",
+  "version": "1.0.0",
+  "description": "HTTP сервер на чистому Node.js (модуль http)",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  }
+}

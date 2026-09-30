@@ -1,0 +1,76 @@
+extends layout
+
+mixin table(rows, columns)
+  if rows.length
+    .table-wrap
+      table
+        thead
+          tr
+            each col in columns
+              th= col.label
+        tbody
+          each row in rows
+            tr
+              each col in columns
+                td= col.format ? col.format(row[col.key]) : (row[col.key] != null ? row[col.key] : '—')
+  else
+    p.meta Немає даних.
+
+block content
+  h1 Statistics
+  p.meta Звіти побудовано агрегаційними запитами MongoDB ($match, $group, $bucket, $unwind, $lookup, $facet, $sort, $project).
+  form.card.filters(method="get" action="/stats")
+    label Місто (users)
+      input(type="text" name="city" value=query.city placeholder="Kyiv")
+    label Мін. вік
+      input(type="number" name="minAge" value=query.minAge min="0")
+    label Категорія (articles)
+      input(type="text" name="category" value=query.category placeholder="Databases")
+    button(type="submit") Фільтрувати
+    a(href="/stats") Скинути
+
+  h2 Articles overview ($facet)
+  .card
+    p
+      | Статей: 
+      b= overview.totals.articles
+      |  · Переглядів: 
+      b= overview.totals.views
+      |  · Лайків: 
+      b= overview.totals.likes
+      |  · Середньо переглядів: 
+      b= overview.totals.avgViews
+    p.meta Найпопулярніші:
+    ul
+      each a in overview.mostViewed
+        li #{a.title} — #{a.views} переглядів (#{a.author})
+
+  h2 Users by city
+  +table(byCity, [{ key: 'city', label: 'City' }, { key: 'count', label: 'Users' }, { key: 'avgAge', label: 'Avg age' }, { key: 'minAge', label: 'Min' }, { key: 'maxAge', label: 'Max' }, { key: 'sampleNames', label: 'Sample names', format: (v) => v.join(', ') }])
+
+  h2 Age groups ($bucket)
+  +table(ageGroups, [{ key: 'range', label: 'Age range' }, { key: 'count', label: 'Users' }, { key: 'avgAge', label: 'Avg age' }])
+
+  h2 Users by role
+  +table(byRole, [{ key: 'role', label: 'Role' }, { key: 'count', label: 'Users' }, { key: 'avgAge', label: 'Avg age' }])
+
+  h2 Top hobbies ($unwind)
+  +table(hobbies, [{ key: 'hobby', label: 'Hobby' }, { key: 'count', label: 'Users' }])
+
+  h2 Articles by category
+  +table(byCategory, [{ key: 'category', label: 'Category' }, { key: 'count', label: 'Articles' }, { key: 'totalViews', label: 'Views' }, { key: 'avgViews', label: 'Avg views' }, { key: 'totalLikes', label: 'Likes' }, { key: 'likeRate', label: 'Like rate, %' }, { key: 'lastPublished', label: 'Last published', format: formatDate }])
+
+  h2 Authors ($lookup → users)
+  +table(byAuthor, [{ key: 'author', label: 'Author' }, { key: 'city', label: 'City' }, { key: 'articles', label: 'Articles' }, { key: 'totalViews', label: 'Views' }, { key: 'totalLikes', label: 'Likes' }])
+
+  h2 Articles by month
+  +table(byMonth, [{ key: 'month', label: 'Month' }, { key: 'count', label: 'Articles' }, { key: 'views', label: 'Views' }])
+
+  h2 Top tags
+  p
+    each t in tags
+      a.tag(href=`/articles?tag=${encodeURIComponent(t.tag)}`) #{t.tag} (#{t.count})
+
+  p.meta
+    | JSON: 
+    a(href="/api/stats") /api/stats

@@ -1,0 +1,24 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field__input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.field__input:focus {
+  outline: 2px solid #a5b4fc;
+  border-color: #6366f1;
+}

@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  a(href="/users") ← Back to users
+  .card
+    h1= user.name
+    dl
+      dt _id
+      dd: code= user._id
+      dt Email
+      dd: a(href=`mailto:${user.email}`)= user.email
+      dt Age
+      dd= user.age != null ? user.age : '—'
+      dt City
+      dd= user.city || '—'
+      dt Role
+      dd= user.role || '—'
+      if user.hobbies && user.hobbies.length
+        dt Hobbies
+        dd
+          each hobby in user.hobbies
+            span.tag= hobby
+      dt Created
+      dd= formatDate(user.createdAt)
+  p: a(href=`/api/users/${user._id}`) JSON

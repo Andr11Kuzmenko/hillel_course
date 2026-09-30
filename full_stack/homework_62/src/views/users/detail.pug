@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  a(href="/users") ← Back to users
+  .card
+    h1= user.name
+    dl
+      dt ID
+      dd= user.id
+      dt Email
+      dd: a(href=`mailto:${user.email}`)= user.email
+      dt Age
+      dd= user.age != null ? user.age : '—'
+      dt City
+      dd= user.city != null ? user.city : '—'

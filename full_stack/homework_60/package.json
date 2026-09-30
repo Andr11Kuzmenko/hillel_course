@@ -1,0 +1,14 @@
+{
+  "name": "homework-60",
+  "version": "1.0.0",
+  "description": "RESTful API на Express з модульною структурою",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

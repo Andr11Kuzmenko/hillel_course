@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 Users
+  if users.length
+    table
+      thead
+        tr
+          th ID
+          th Name
+          th Email
+          th Age
+      tbody
+        each user in users
+          tr
+            td= user.id
+            td: a(href=`/users/${user.id}`)= user.name
+            td= user.email
+            td= user.age != null ? user.age : '—'
+  else
+    p Користувачів немає.
